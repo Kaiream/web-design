@@ -1,2 +1,2 @@
-# auto156
+# Web Design
 Projekt na předmět Web Design.
