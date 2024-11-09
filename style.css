@@ -124,6 +124,22 @@ nav ul li a {
     padding: 0 30px;
 }
 
+/* Odkazy v nadpisech článků */
+.article-list .item h2 a,
+.featured-article h1 a,
+.article-list-vertical .list-content h3 a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.article-list .item h2 a:hover,
+.featured-article h1 a:hover,
+.article-list-vertical .list-content h3 a:hover {
+    color: #ffcc00;
+}
+
+
 .article-list .item {
     background-color: transparent;
     padding: 0;
@@ -301,3 +317,134 @@ nav ul li a {
 .social-icons a:hover img {
     transform: scale(1.1);
 }
+
+
+
+/*Aricle*/
+
+
+/* Article page container */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+/* Úvodní obrázek */
+.article-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+
+/* Nadpis a informace o článku */
+.article-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.article-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.article-info {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.article-info .author {
+    color: #ffcc00;
+}
+
+/* Hlavní text článku */
+.article-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.article-content h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 20px 0 10px;
+}
+
+.article-content p {
+    margin-bottom: 15px;
+}
+
+
+
+/* Doporučené články */
+.recommended-articles {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding-top: 20px;
+    border-top: 1px solid #555555;
+}
+
+/* Horizontální rozložení doporučených článků */
+.article-list-horizontal {
+    display: flex;
+    flex-wrap: nowrap; /* Zabrání zalomení položek na další řádek */
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.article-list-horizontal .list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%; /* Každý článek zabere přibližně třetinu šířky */
+    max-width: 400px;
+}
+
+.article-list-horizontal .list-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.article-list-horizontal .list-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-list-horizontal .category {
+    color: #ffcc00;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.article-list-horizontal .list-content h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.article-list-horizontal .date-author {
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+/* Odkazy v nadpisech článků */
+.article-list-horizontal .list-content h3 a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.article-list-horizontal .list-content h3 a:hover {
+    color: #ffcc00;
+}
+
+
