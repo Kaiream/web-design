@@ -18,6 +18,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* position: fixed;
+    top: 0;
+    z-index: 1000; Ensure the header is above other content */
 }
 
 .brand {
@@ -49,6 +53,7 @@ nav ul li a {
 /* Main content container */
 /* Hlavní obsah s dolním odsazením */
 .main-content {
+    padding-top: 60px; /* Adjust this value based on the height of your header */
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 40px; /* Prostor mezi obsahem a footerem */
@@ -79,7 +84,7 @@ nav ul li a {
 .featured-article {
     display: flex;
     flex-direction: row-reverse;
-    padding: 20px 30px;
+    padding: 30px 30px;
     margin: 20px 0;
     width: 100%;
 }
@@ -447,4 +452,8 @@ nav ul li a {
     color: #ffcc00;
 }
 
-
+.lines-main {
+    border: none;
+    height: 3px;
+    background-color: #aec6cf;
+}
