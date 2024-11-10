@@ -19,9 +19,9 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    /* position: fixed;
+    position: fixed;
     top: 0;
-    z-index: 1000; Ensure the header is above other content */
+    z-index: 1000;
 }
 
 .brand {
@@ -39,7 +39,13 @@ nav ul li a {
     color: #ffffff;
     text-decoration: none;
     padding: 0 20px;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
 }
 
 .search input {
@@ -53,7 +59,7 @@ nav ul li a {
 /* Main content container */
 /* Hlavní obsah s dolním odsazením */
 .main-content {
-    padding-top: 60px; /* Adjust this value based on the height of your header */
+    padding-top: 100px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 40px; /* Prostor mezi obsahem a footerem */
@@ -84,7 +90,7 @@ nav ul li a {
 .featured-article {
     display: flex;
     flex-direction: row-reverse;
-    padding: 30px 30px;
+    padding: 10px 30px;
     margin: 20px 0;
     width: 100%;
 }
@@ -270,13 +276,28 @@ nav ul li a {
     font-size: 14px;
     color: #cccccc;
     margin-top: 10px;
+    text-align: center;
+}
+
+.footer-brand img {
+    height: 30px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    padding-left: 125px;
+}
+
+.footer hr {
+    width: 20%;
+    margin: 0 auto;
+    margin-top:50px
 }
 
 .footer-links h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffcc00;
-    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .footer-links ul {
@@ -285,6 +306,7 @@ nav ul li a {
     padding: 0;
     margin: 0;
     gap: 20px;
+    justify-content: center;
 }
 
 .footer-links ul li a {
@@ -299,8 +321,12 @@ nav ul li a {
 
 /* Sociální sítě */
 .footer-social p {
-    font-size: 14px;
-    color: #aaaaaa;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-left: 45px;
+    margin-top: 8px;
+    margin-bottom: 20px;
 }
 
 .social-icons {
@@ -332,7 +358,7 @@ nav ul li a {
 .article-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px 30px;
+    padding: 125px 30px;
 }
 
 /* Úvodní obrázek */
@@ -456,4 +482,27 @@ nav ul li a {
     border: none;
     height: 3px;
     background-color: #aec6cf;
+}
+
+.lines-header {
+    border: none;
+    height: 3px;
+    background-color: #aec6cf;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 75px;
+}
+
+.brand img {
+    height: 40px; /* Adjust the height as needed */
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.copyright {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #aaaaaa;
 }
