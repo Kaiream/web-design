@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celý Článek | iZítra.cz</title>
+    <title>Detail Článku | iZítra.cz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,10 +15,10 @@
         <nav>
             <ul>
                 <li><a href="index.html">Místní</a></li>
-                <li><a href="#">Zahraniční</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Kultura</a></li>
-                <li><a href="#">Počasí</a></li>
+                <li><a href="zahranicni.html">Zahraniční</a></li>
+                <li><a href="sport.html">Sport</a></li>
+                <li><a href="kultura.html">Kultura</a></li>
+                <li><a href="pocasi.html">Počasí</a></li>
             </ul>
         </nav>
         <div class="search">
@@ -30,15 +30,12 @@
 
     <!-- Article Content -->
     <div class="article-container">
-        <!-- Úvodní obrázek -->
-        <div class="article-image">
-            <img src="https://picsum.photos/1200/600" alt="Název článku">
-        </div>
-
         <!-- Nadpis a informace o článku -->
         <div class="article-header">
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+            <p class="article-subtitle">Důležitý podnadpis článku, který shrnuje obsah</p>
             <div class="article-info">
+                <span class="category">Kategorie: Sport</span>
                 <span class="author">Jan Novák</span>
                 <span class="date">| 10. listopadu 2024</span>
             </div>
@@ -46,47 +43,75 @@
 
         <!-- Hlavní text článku -->
         <div class="article-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, eros nec auctor tincidunt, sapien elit suscipit lectus, ut tincidunt justo mauris a turpis. Vivamus vel velit eget ligula ultrices suscipit. Praesent at nibh varius, fermentum elit sed, maximus est. Donec aliquet auctor ex, a tempor elit fermentum at.</p>
-            <p>Mauris ut mi varius, sagittis elit a, tincidunt velit. Donec bibendum nisl sit amet nisi finibus, ac iaculis purus volutpat. Sed blandit lectus ut risus vestibulum, non vulputate lorem tincidunt.</p>
-            <h2>Přehled hlavních bodů</h2>
-            <p>Suspendisse potenti. Fusce ullamcorper varius erat, vel fermentum ligula pulvinar a. Nulla eu tempor risus, vel gravida tortor. Nam semper velit vitae semper facilisis.</p>
-            <p>Aliquam consequat diam nec eros fringilla, ac facilisis tortor suscipit. Nunc nec turpis metus. Cras nec volutpat eros, in vulputate mauris. Curabitur vitae tellus euismod, accumsan magna at, malesuada velit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, eros nec auctor tincidunt, sapien elit suscipit lectus. Vivamus vel velit eget ligula ultrices suscipit.</p>
+            <img src="https://picsum.photos/800/400" alt="Doplňující fotografie">
+            <p>Mauris ut mi varius, sagittis elit a, tincidunt velit. Donec bibendum nisl sit amet nisi finibus, ac iaculis purus volutpat. Sed blandit lectus ut risus vestibulum.</p>
+            <blockquote>
+                "Důležitý citát z článku, který přitahuje pozornost čtenáře."
+            </blockquote>
+            <p>Aliquam consequat diam nec eros fringilla, ac facilisis tortor suscipit. Nunc nec turpis metus. Cras nec volutpat eros, in vulputate mauris.</p>
+        </div>
+
+        <!-- Doporučené články -->
+        <div class="recommended-articles">
+            <h2 class="section-title">Podobné články</h2>
+            <section class="article-list-horizontal">
+                <div class="list-item">
+                    <img src="https://picsum.photos/100/100?random=3" alt="Doporučený článek 1">
+                    <div class="list-content">
+                        <span class="category">ZAJÍMAVOSTI</span>
+                        <h3><a href="article.html">Lorem ipsum dolor sit amet</a></h3>
+                        <span class="date-author">9. 11. 2024 | JANA SVOBODOVÁ</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="https://picsum.photos/100/100?random=4" alt="Doporučený článek 2">
+                    <div class="list-content">
+                        <span class="category">ZAHRANIČÍ</span>
+                        <h3><a href="article.html">Lorem ipsum dolor sit amet</a></h3>
+                        <span class="date-author">9. 11. 2024 | PETR MALÝ</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <img src="https://picsum.photos/100/100?random=5" alt="Doporučený článek 3">
+                    <div class="list-content">
+                        <span class="category">ZAJÍMAVOSTI</span>
+                        <h3><a href="article.html">Lorem ipsum dolor sit amet</a></h3>
+                        <span class="date-author">9. 11. 2024 | LUCIE NOVÁ</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Komentáře -->
+        <div class="comments-section">
+            <h2 class="section-title">Uživatelské Komentáře</h2>
+            <div class="comment">
+                <p><strong>Uživatel1:</strong> Skvělý článek, opravdu inspirativní!</p>
+                <span class="comment-date">10. listopadu 2024</span>
+            </div>
+            <div class="comment">
+                <p><strong>Uživatel2:</strong> Mohli byste přidat více informací o hokeji?</p>
+                <span class="comment-date">10. listopadu 2024</span>
+            </div>
+            <form class="comment-form">
+                <textarea placeholder="Napište svůj komentář..." required></textarea>
+                <button type="submit">Odeslat</button>
+            </form>
+        </div>
+
+        <!-- Doplňující prvek: Sdílení na sociálních sítích -->
+        <div class="social-share">
+            <h2 class="section-title">Sdílejte Článek</h2>
+            <div class="social-icons">
+                <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+            </div>
         </div>
     </div>
 
-    <!-- Doporučené články -->
-    <div class="recommended-articles">
-        <h2 class="section-title">Doporučené Články</h2>
-        <section class="article-list-horizontal">
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=8" alt="Doporučený článek 1">
-                <div class="list-content">
-                    <span class="category">ZAJÍMAVOSTI</span>
-                    <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                    <span class="date-author">9. 11. 2024 | JANA SVOBODOVÁ</span>
-                </div>
-            </div>
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=9" alt="Doporučený článek 2">
-                <div class="list-content">
-                    <span class="category">ZAHRANIČÍ</span>
-                    <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                    <span class="date-author">9. 11. 2024 | PETR MALÝ</span>
-                </div>
-            </div>
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=10" alt="Doporučený článek 3">
-                <div class="list-content">
-                    <span class="category">ZAJÍMAVOSTI</span>
-                    <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                    <span class="date-author">9. 11. 2024 | LUCIE NOVÁ</span>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    
-    
+    <hr class="lines-main"></hr>
 
     <!-- Footer -->
     <footer class="footer">
@@ -98,24 +123,14 @@
             <div class="footer-links">
                 <h4>Navigace</h4>
                 <ul>
-                    <li><a href="#">Místní</a></li>
-                    <li><a href="#">Zahraniční</a></li>
-                    <li><a href="#">Sport</a></li>
-                    <li><a href="#">Kultura</a></li>
-                    <li><a href="#">Počasí</a></li>
+                    <li><a href="index.html">Místní</a></li>
+                    <li><a href="zahranicni.html">Zahraniční</a></li>
+                    <li><a href="sport.html">Sport</a></li>
+                    <li><a href="kultura.html">Kultura</a></li>
+                    <li><a href="pocasi.html">Počasí</a></li>
                 </ul>
             </div>
-            <div class="footer-social">
-                <p>Sledujte nás</p>
-                <div class="social-icons">
-                    <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
-                </div>
-            </div>
         </div>
-        <br/>
-        <hr class="section-divider"></hr>
         <p class="copyright">&copy; 2024 iZítra.cz<br>Všechna práva vyhrazena.</p>
     </footer>
 </body>
