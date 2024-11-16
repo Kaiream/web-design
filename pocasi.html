@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Počasí | iZítra.cz</title>
+    <link rel="icon" href="images/cool.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="iZITRA.cz Logo"/>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Domácí</a></li>
+                <li><a href="#">Zahraniční</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Kultura</a></li>
+                <li><a href="pocasi.html">Počasí</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Vyhledávání...">
+        </div>
+    </header>
+
+    <hr class="lines-header"></hr>
+
+    <!-- Weather Content -->
+    <div class="weather-container">
+        <h1>Počasí</h1>
+        <div class="weather-forecast">
+          <div class="weather-day">
+            <h2>Dnes</h2>
+            <div class="weather-icon">
+              <img src="icon-sunny.svg" alt="Sunny">
+            </div>
+            <p class="weather-temp">8°C</p>
+            <p class="weather-condition">Slunečno</p>
+          </div>
+          <!-- Repeat the weather-day structure for the other days -->
+        </div>
+        <div class="weather-map">
+          <img src="weather-map.png" alt="Weather Map">
+        </div>
+      </div>
+
+    <!-- Doporučené články -->
+    <div class="recommended-articles">
+        <h2 class="section-title">Doporučené Články</h2>
+        <section class="article-list-horizontal">
+            <div class="list-item">
+                <img src="https://picsum.photos/100/100?random=8" alt="Doporučený článek 1">
+                <div class="list-content">
+                    <span class="category">ZAJÍMAVOSTI</span>
+                    <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
+                    <span class="date-author">9. 11. 2024 | JANA SVOBODOVÁ</span>
+                </div>
+            </div>
+            <div class="list-item">
+                <img src="https://picsum.photos/100/100?random=9" alt="Doporučený článek 2">
+                <div class="list-content">
+                    <span class="category">ZAHRANIČÍ</span>
+                    <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
+                    <span class="date-author">9. 11. 2024 | PETR MALÝ</span>
+                </div>
+            </div>
+            <div class="list-item">
+                <img src="https://picsum.photos/100/100?random=10" alt="Doporučený článek 3">
+                <div class="list-content">
+                    <span class="category">ZAJÍMAVOSTI</span>
+                    <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
+                    <span class="date-author">9. 11. 2024 | LUCIE NOVÁ</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="iZITRA.cz Logo"/>
+                <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigace</h4>
+                <ul>
+                    <li><a href="#">Domácí</a></li>
+                    <li><a href="#">Zahraniční</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Kultura</a></li>
+                    <li><a href="#">Počasí</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <p>Sledujte nás</p>
+                <div class="social-icons">
+                    <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <hr class="section-divider"></hr>
+        <p class="copyright">&copy; 2024 iZítra.cz<br>Všechna práva vyhrazena.</p>
+    </footer>
+</body>
+</html>
