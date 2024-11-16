@@ -135,6 +135,14 @@ nav ul li a:hover {
     padding: 0 30px;
 }
 
+.article-list-vertical .list-content p {
+    font-size: 14px; /* Velikost textu náhledu */
+    color: #cccccc; /* Barva textu náhledu */
+    margin: 8px 0; /* Mezery kolem textu */
+    line-height: 1.6; /* Výška řádku pro lepší čitelnost */
+}
+
+
 /* Odkazy v nadpisech článků */
 .article-list .item h2 a,
 .featured-article h1 a,
@@ -506,3 +514,16 @@ nav ul li a:hover {
     font-size: 12px;
     color: #aaaaaa;
 }
+
+/* Minimalistický nadpis */
+.minimal-title {
+    text-align: center; /* Vycentrování textu */
+    font-size: 24px; /* Velikost textu */
+    font-weight: bold; /* Mírnější zvýraznění */
+    color: #ffcc00; /* Jemná sportovní barva */
+    margin: 40px 0 30px; /* Odsazení od ostatního obsahu */
+    text-transform: uppercase; /* Velká písmena pro formálnější vzhled */
+    letter-spacing: 1px; /* Lehké mezery mezi písmeny */
+}
+
+
