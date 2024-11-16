@@ -88,44 +88,62 @@
             </section>
         </div>
 
-        <!-- Komentáře -->
-        <div class="comments-section">
-            <h2 class="section-title">Komentáře</h2>
+<!-- Komentáře -->
+<div class="comments-section">
+    <h2 class="section-title">Komentáře</h2>
 
-            <!-- Textové pole -->
-            <div class="editor-container">
-                <div class="editor-text">
-                    <form class="comment-form">
-                        <textarea placeholder="Napište svůj komentář..." required></textarea>
-                    </form>
-                </div>
-                <div class="editor-submit">
-                    <button type="submit">Odeslat</button>
-                </div>
-            </div>
+    <!-- Textové pole -->
+    <div class="editor-container">
+        <form class="comment-form">
+            <textarea class="comment-input" placeholder="Napište svůj komentář..." required></textarea>
+            <button type="submit" class="comment-submit">Odeslat</button>
+        </form>
+    </div>
 
-            <!-- Příspěvky -->
-            <div class="comment">
-                <p><strong>Uživatel1:</strong> Skvělý článek, opravdu inspirativní!</p>
-                <span class="comment-date">10. listopadu 2024</span>
-            </div>
-            <div class="comment">
-                <img src="images/user.png" alt="Uživatel" class="comments-user-icon"/>
-                <div class="group">
-                    <span class="jméno">Swiss Alps</span> <br/>
-                    <ul>
-                        <li><span>Odpovědět</span></li>
-                        <li><span>Stotožnit</span></li>
-                        <li><span>Nahlásit</span></li>
-                        <li><span>10. 11. 2024</span></li>
-                    </ul>
+    <!-- Příspěvky -->
+    <div class="comments-list">
+        <div class="comment">
+            <img src="images/user1.png" alt="Uživatel 1" class="comment-user-icon" />
+            <div class="comment-content">
+                <span class="comment-author">Uživatel1</span>
+                <p class="comment-text">Skvělý článek, opravdu inspirativní!</p>
+                <div class="comment-footer">
+                    <span class="comment-date">10. listopadu 2024</span>
+                    <span class="action-item">Odpovědět</span>
+                    <span class="action-item">Nahlásit</span>
                 </div>
-            </div>
-            <div class="comment">
-                <p><strong>Uživatel2:</strong> Mohli byste přidat více informací o hokeji?</p>
-                <span class="comment-date">10. listopadu 2024</span>
             </div>
         </div>
+
+        <div class="comment">
+            <img src="images/user2.png" alt="Uživatel 2" class="comment-user-icon" />
+            <div class="comment-content">
+                <span class="comment-author">Swiss Alps</span>
+                <p class="comment-text">Děkuji za informace! Můžete přidat více podrobností?</p>
+                <div class="comment-footer">
+                    <span class="comment-date">10. listopadu 2024</span>
+                    <span class="action-item">Odpovědět</span>
+                    <span class="action-item">Nahlásit</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment">
+            <img src="images/user3.png" alt="Uživatel 3" class="comment-user-icon" />
+            <div class="comment-content">
+                <span class="comment-author">Uživatel3</span>
+                <p class="comment-text">Mohli byste přidat více informací o hokeji?</p>
+                <div class="comment-footer">
+                    <span class="comment-date">10. listopadu 2024</span>
+                    <span class="action-item">Odpovědět</span>
+                    <span class="action-item">Nahlásit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
         <!-- Doplňující prvek: Sdílení na sociálních sítích -->
         <div class="social-share">
