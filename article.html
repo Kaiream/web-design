@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Článku | iZítra.cz</title>
+    <title>Detail článku | iZítra.cz</title>
+    <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +15,7 @@
         </a>
         <nav>
             <ul>
-                <li><a href="index.html">Místní</a></li>
+                <li><a href="domaci.html">Domácí</a></li>
                 <li><a href="zahranicni.html">Zahraniční</a></li>
                 <li><a href="sport.html">Sport</a></li>
                 <li><a href="kultura.html">Kultura</a></li>
@@ -33,12 +34,16 @@
         <!-- Nadpis a informace o článku -->
         <div class="article-header">
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-            <p class="article-subtitle">Důležitý podnadpis článku, který shrnuje obsah</p>
             <div class="article-info">
-                <span class="category">Kategorie: Sport</span>
-                <span class="author">Jan Novák</span>
-                <span class="date">| 10. listopadu 2024</span>
+                <a href="#" class="author-image">
+                    <img src="images/ico.jpeg" alt="Autor článku" class="icon"/>
+                </a>
+                <div class="group">
+                    <span class="author">Jan Novák</span> <br/>
+                    <span class="date">10. 11. 2024</span>
+                </div>
             </div>
+            <p class="article-subtitle">Důležitý podnadpis článku, který shrnuje obsah</p>
         </div>
 
         <!-- Hlavní text článku -->
@@ -85,19 +90,41 @@
 
         <!-- Komentáře -->
         <div class="comments-section">
-            <h2 class="section-title">Uživatelské Komentáře</h2>
+            <h2 class="section-title">Komentáře</h2>
+
+            <!-- Textové pole -->
+            <div class="editor-container">
+                <div class="editor-text">
+                    <form class="comment-form">
+                        <textarea placeholder="Napište svůj komentář..." required></textarea>
+                    </form>
+                </div>
+                <div class="editor-submit">
+                    <button type="submit">Odeslat</button>
+                </div>
+            </div>
+
+            <!-- Příspěvky -->
             <div class="comment">
                 <p><strong>Uživatel1:</strong> Skvělý článek, opravdu inspirativní!</p>
                 <span class="comment-date">10. listopadu 2024</span>
             </div>
             <div class="comment">
+                <img src="images/user.png" alt="Uživatel" class="comments-user-icon"/>
+                <div class="group">
+                    <span class="jméno">Swiss Alps</span> <br/>
+                    <ul>
+                        <li><span>Odpovědět</span></li>
+                        <li><span>Stotožnit</span></li>
+                        <li><span>Nahlásit</span></li>
+                        <li><span>10. 11. 2024</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="comment">
                 <p><strong>Uživatel2:</strong> Mohli byste přidat více informací o hokeji?</p>
                 <span class="comment-date">10. listopadu 2024</span>
             </div>
-            <form class="comment-form">
-                <textarea placeholder="Napište svůj komentář..." required></textarea>
-                <button type="submit">Odeslat</button>
-            </form>
         </div>
 
         <!-- Doplňující prvek: Sdílení na sociálních sítích -->
@@ -123,14 +150,24 @@
             <div class="footer-links">
                 <h4>Navigace</h4>
                 <ul>
-                    <li><a href="index.html">Místní</a></li>
+                    <li><a href="domaci.html">Domácí</a></li>
                     <li><a href="zahranicni.html">Zahraniční</a></li>
                     <li><a href="sport.html">Sport</a></li>
                     <li><a href="kultura.html">Kultura</a></li>
                     <li><a href="pocasi.html">Počasí</a></li>
                 </ul>
             </div>
+            <div class="footer-social">
+                <p>Sledujte nás</p>
+                <div class="social-icons">
+                    <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
         </div>
+        <br/>
+        <hr class="section-divider"></hr>
         <p class="copyright">&copy; 2024 iZítra.cz<br>Všechna práva vyhrazena.</p>
     </footer>
 </body>

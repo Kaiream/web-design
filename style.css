@@ -59,7 +59,7 @@ nav ul li a:hover {
 /* Main content container */
 /* Hlavní obsah s dolním odsazením */
 .main-content {
-    padding-top: 100px;
+    padding-top: 80px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 40px; /* Prostor mezi obsahem a footerem */
@@ -122,6 +122,7 @@ nav ul li a:hover {
 }
 
 .content .author {
+    margin-bottom: 50px;
     font-size: 12px;
     color: #aaaaaa;
     margin-top: 10px;
@@ -218,7 +219,7 @@ nav ul li a:hover {
 }
 
 .category {
-    color: #ffcc00;
+    color: #FEE7BF;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
@@ -391,12 +392,37 @@ nav ul li a:hover {
 }
 
 .article-info {
+    display: flex;
+    align-items: center;
     font-size: 14px;
+    padding-bottom: 10px;
     color: #aaaaaa;
 }
 
 .article-info .author {
-    color: #ffcc00;
+    font-weight: bold;
+    color: #FEE7BF;
+}
+
+.article-info .icon {
+    border-radius: 50%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-right: 5px;
+    width: 45px;
+    height: 45px;
+}
+
+.article-info .author-image {
+    display: inline-flex;
+    min-width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+.article-info .group {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hlavní text článku */
@@ -517,13 +543,47 @@ nav ul li a:hover {
 
 /* Minimalistický nadpis */
 .minimal-title {
-    text-align: center; /* Vycentrování textu */
-    font-size: 24px; /* Velikost textu */
-    font-weight: bold; /* Mírnější zvýraznění */
-    color: #ffcc00; /* Jemná sportovní barva */
-    margin: 40px 0 30px; /* Odsazení od ostatního obsahu */
+    position: relative; /* Nutné pro správné zarovnání */
+    text-align: left; /* Vycentrování textu */
+    font-size: 28px; /* Velikost textu */
+    font-weight: 800; /* Zvýraznění */
+    color: #ffffff; /* Jemná sportovní barva */
+    margin: 0 0 50px; /* Odsazení od ostatního obsahu */
     text-transform: uppercase; /* Velká písmena pro formálnější vzhled */
     letter-spacing: 1px; /* Lehké mezery mezi písmeny */
+    padding: 0 30px; /* Odsazení od okraje */
+    padding-bottom: 10px;
 }
 
+.minimal-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 80%; /* Full width of the title */
+    height: 2px; /* Thickness of the underline */
+    background: linear-gradient(to right, #ffcc00, transparent); /* Gradient from yellow to transparent */
+}
 
+/* Breadcrumb navigation */
+.breadcrumb {
+    margin: 20px 30px;
+    font-size: 12px;
+  }
+  
+  .breadcrumb a {
+    color: #7c7c7c;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-separator {
+    color: #7c7c7c; /* Same color as the breadcrumb links */
+    margin: 0 2px 0 4px;    /* Optional: add spacing around the separator */
+    white-space: nowrap; /* Prevents the separator from wrapping */
+    display: inline-block; /* Allows the transform to work properly */
+    transform: scaleY(1.5); /* Scales the separator height by 1.5 times */
+}
