@@ -20,42 +20,160 @@
                 <li><a href="sport.html">Sport</a></li>
                 <li><a href="kultura.html">Kultura</a></li>
                 <li><a href="pocasi.html">Počasí</a></li>
+                <li><a href="redakce.html">Redakce</a></li>
             </ul>
         </nav>
+
         <div class="search">
-            <input type="text" placeholder="Vyhledávání...">
+            <a href="premium.html" class="premium-button">Premium</a>
+            <form action="vyhledavani.html" class="result">
+                <input type="text" placeholder="Vyhledávání...">
+                <button type="submit" class="search-submit">›</button>
+            </form>
         </div>
     </header>
 
     <hr class="lines-header"></hr>
 
-    <!-- Weather Content -->
-    <div class="weather-container">
-        <h1>Počasí</h1>
-        <div class="weather-forecast">
-          <div class="weather-day">
-            <h2>Dnes</h2>
-            <div class="weather-icon">
-              <img src="icon-sunny.svg" alt="Sunny">
+    <!-- Main content -->
+    <div class="main-content">
+
+        <!-- Breadcrumb navigation -->
+        <nav class="breadcrumb">
+            <a href="index.html">iZ.cz</a>
+            <span class="breadcrumb-separator"> / </span>
+            <a href="#">Počasí</a>
+        </nav>
+
+        <h1 class="section-title minimal-title no-after">Počasí</h1>
+
+        <p class="alternate-title">Aktuální předpověď počasí ke dni 17. 11. - 24. 11. 2024</p>
+
+        <div class="forecast-grid">
+            <div class="forecast-card">
+                <p class="day">Pondělí</p>
+                <img src="images/sunny.png" alt="Slunečno" class="weather-icon" />
+                <p class="temp">12°C</p>
+                <p class="low-temp">2°C</p>
+                <p class="description">Slunečno</p>
             </div>
-            <p class="weather-temp">8°C</p>
-            <p class="weather-condition">Slunečno</p>
-          </div>
-          <!-- Repeat the weather-day structure for the other days -->
+            <div class="forecast-card">
+                <p class="day">Úterý</p>
+                <img src="images/overcast.png" alt="Zataženo" class="weather-icon" />
+                <p class="temp">6°C</p>
+                <p class="low-temp">-1°C</p>
+                <p class="description">Zataženo</p>
+            </div>
+            <div class="forecast-card">
+                <p class="day">Středa</p>
+                <img src="images/cloudy.png" alt="Skoro slunečno" class="weather-icon" />
+                <p class="temp">10°C</p>
+                <p class="low-temp">1°C</p>
+                <p class="description">Skoro slunečno</p>
+            </div>
+            <div class="forecast-card">
+                <p class="day">Čtvrtek</p>
+                <img src="images/raining.png" alt="Pršno" class="weather-icon" />
+                <p class="temp">8°C</p>
+                <p class="low-temp">-4°C</p>
+                <p class="description">Pršno</p>
+            </div>
+            <div class="forecast-card">
+                <p class="day">Pátek</p>
+                <img src="images/cloudy.png" alt="Slunce a Mrak" class="weather-icon" />
+                <p class="temp">18°C</p>
+                <p class="low-temp">7°C</p>
+                <p class="description">Slunce a mrak</p>
+            </div>
+            <div class="forecast-card">
+                <p class="day">Sobota</p>
+                <img src="images/cloudy.png" alt="Jasně Mrakově" class="weather-icon" />
+                <p class="temp">17°C</p>
+                <p class="low-temp">8°C</p>
+                <p class="description">Jasně mrakově</p>
+            </div>
         </div>
-        <div class="weather-map">
-          <img src="weather-map.png" alt="Weather Map">
+
+        <!-- Scroll bar -->
+        <div class="scroll-container">
+            <div class="scroll-indicator">
+                <div class="scroll-thumb"></div>
+            </div>
+            <div class="scroll-arrows">
+                <span>←</span>
+                <span>→</span>
+            </div>
         </div>
-      </div>
+
+        <select class="region-select">
+            <option value="" disabled hidden selected>Vyberte kraj</option>
+            <option value="praha">Praha</option>
+            <option value="stredocesky">Středočeský kraj</option>
+            <option value="jihocesky">Jihočeský kraj</option>
+            <option value="plzensky">Plzeňský kraj</option>
+            <option value="karlovarsky">Karlovarský kraj</option>
+            <option value="ustecky">Ústecký kraj</option>
+            <option value="liberecky">Liberecký kraj</option>
+            <option value="kralovehradecky">Královéhradecký kraj</option>
+            <option value="pardubicky">Pardubický kraj</option>
+            <option value="vysocina">Vysočina</option>
+            <option value="jihomoravsky">Jihomoravský kraj</option>
+            <option value="olomoucky">Olomoucký kraj</option>
+            <option value="zlinsky">Zlínský kraj</option>
+            <option value="moravskoslezsky">Moravskoslezský kraj</option>
+        </select>
+
+        <div class="map-container">
+            <p class="date-overlay">7. 11. - 24. 11. 2024</p>
+            <div class="region-weather-grid">
+                <div class="weather-box" style="top: 25%; left: 20%;">
+                <img src="images/sunny.png" alt="Slunečno" class="weather-box-icon" />
+                  <p class="temp">6°C</p>
+                  <p class="low-temp">-1°C</p>
+                </div>
+                <div class="weather-box" style="top: 12%; left: 35%;">
+                    <img src="images/raining.png" alt="Pršno" class="weather-box-icon" />
+                  <p class="temp">8°C</p>
+                  <p class="low-temp">1°C</p>
+                </div>
+                <div class="weather-box" style="top: 35%; left: 40%;">
+                    <img src="images/sunny.png" alt="Slunečno" class="weather-box-icon" />
+                  <p class="temp">10°C</p>
+                  <p class="low-temp">2°C</p>
+                </div>
+                <div class="weather-box" style="top: 35%; right: 30%;">
+                    <img src="images/raining.png" alt="Pršno" class="weather-box-icon" />
+                  <p class="temp">9°C</p>
+                  <p class="low-temp">2°C</p>
+                </div>
+                <div class="weather-box" style="bottom: 20%; left: 30%;">
+                    <img src="images/cloudy.png" alt="Zataženo" class="weather-box-icon" />
+                  <p class="temp">9°C</p>
+                  <p class="low-temp">1°C</p>
+                </div>
+                <div class="weather-box" style="bottom: 20%; right: 40%;">
+                    <img src="images/overcast.png" alt="Mraky" class="weather-box-icon" />
+                  <p class="temp">10°C</p>
+                  <p class="low-temp">1°C</p>
+                </div>
+                <div class="weather-box" style="bottom: 25%; right: 20%;">
+                    <img src="images/cloudy.png" alt="Zataženo" class="weather-box-icon" />
+                  <p class="temp">8°C</p>
+                  <p class="low-temp">1°C</p>
+                </div>
+              </div>
+            <img src="images/mapa.png" alt="Mapa počasí pro ČR" class="weather-map"/>
+        </div>
+    </div>
 
     <!-- Doporučené články -->
     <div class="recommended-articles">
-        <h2 class="section-title">Doporučené Články</h2>
+        <h2 class="section-title">Relevantní články</h2>
         <section class="article-list-horizontal">
             <div class="list-item">
                 <img src="https://picsum.photos/100/100?random=8" alt="Doporučený článek 1">
                 <div class="list-content">
-                    <span class="category">ZAJÍMAVOSTI</span>
+                    <span class="category">POČASÍ</span>
                     <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
                     <span class="date-author">9. 11. 2024 | JANA SVOBODOVÁ</span>
                 </div>
@@ -63,7 +181,7 @@
             <div class="list-item">
                 <img src="https://picsum.photos/100/100?random=9" alt="Doporučený článek 2">
                 <div class="list-content">
-                    <span class="category">ZAHRANIČÍ</span>
+                    <span class="category">POČASÍ</span>
                     <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
                     <span class="date-author">9. 11. 2024 | PETR MALÝ</span>
                 </div>
@@ -71,7 +189,7 @@
             <div class="list-item">
                 <img src="https://picsum.photos/100/100?random=10" alt="Doporučený článek 3">
                 <div class="list-content">
-                    <span class="category">ZAJÍMAVOSTI</span>
+                    <span class="category">POČASÍ</span>
                     <h3><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
                     <span class="date-author">9. 11. 2024 | LUCIE NOVÁ</span>
                 </div>
@@ -79,9 +197,8 @@
         </section>
     </div>
     
+    <hr class="lines-main"></hr>
     
-    
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
