@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iZítra.cz</title>
+    <title>Členství | iSkrblíci.cz</title>
     <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,21 +14,30 @@
             <a href="index.html" class="close-button">×</a>
         </div>
         
+        <!-- Dropdown menu for mobile responsiveness -->
+        <div class="subscription-dropdown">
+            <select>
+                <option value="monthly">Měsíční předplatné</option>
+                <option value="yearly">Roční předplatné</option>
+                <option value="biennial">Dvouleté předplatné</option>
+            </select>
+        </div>
+
         <div class="subscription-tabs">
             <button class="tab active">Měsíční předplatné</button>
-            <button class="tab">Daruj roční</button>
-            <button class="tab">Daruj dvouleté</button>
+            <button class="tab">Roční předplatné</button>
+            <button class="tab">Dvouleté předplatné</button>
         </div>
         
         <div class="price-display">
             <div class="price-label">První měsíc jen</div>
-            <div class="price">49 Kč</div>
-            <div class="next-payment">Příští opakovaná platba 17. 12. 2024 za 89 Kč/měsíc</div>
+            <div class="price">39 Kč</div>
+            <div class="next-payment">Příští opakovaná platba 01. 01. 2025 za 999,999,999 Kč/měsíc</div>
         </div>
         
         <div class="payment-options">
             <label class="payment-option">
-                <input type="radio" name="payment" checked>
+                <input type="radio" name="payment">
                 <span>Platba kartou</span>
             </label>
             <label class="payment-option">
@@ -40,18 +49,16 @@
                 <span>Apple Pay</span>
             </label>
             <label class="payment-option">
-                <input type="radio" name="payment">
-                <span>Platba přes SMS</span>
+                <input type="radio" name="payment" checked>
+                <span>Platba přes neplacenou pracovní činnost</span>
             </label>
         </div>
-        
-        <a href="#" class="coupon-link">Chci uplatnit svůj kupón</a>
         
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1">
             <button class="submit-button">OBJEDNAT PREMIUM</button>
         </a>
         
-        <div class="terms">
+        <div class="payment-terms">
             Kliknutím na tlačítko souhlasíte s uložením svých platebních údajů v platební bráně GoPay.
         </div>
     </div>
