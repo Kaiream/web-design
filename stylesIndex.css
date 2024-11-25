@@ -22,6 +22,9 @@ body {
 
 header {
     background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav {
@@ -85,55 +88,83 @@ nav {
     margin: var(--spacing);
 }
 
+/* Hlavní obsah */
 main {
     padding: var(--spacing-large);
 }
 
-.hero {
-    text-align: center;
-    padding: var(--spacing-large);
-    background-color: var(--primary-color);
-    color: var(--text-color);
-}
-
-.hero h1 {
-    font-size: var(--font-size-header);
-    margin-bottom: var(--spacing);
-}
-
+/* Grid layout */
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Výchozí layout - jeden sloupec */
     gap: var(--spacing-large);
     padding: var(--spacing-large);
 }
 
-.content-grid img {
-    width: 100%;
-    border-radius: 5px;
-}
-
+/* Hlavní článek */
 .featured {
-    grid-column: span 1;
+    grid-column: 1 / -1; /* Zabírá celou šířku */
     text-align: center;
     background-color: var(--primary-color);
     padding: var(--spacing-large);
     border-radius: 5px;
+    max-width: 800px; /* Omezení šířky */
+    margin: 0 auto;
 }
 
+.featured img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+    object-fit: cover; /* Zajistí správné ořezání obrázku */
+}
+
+.featured h2 {
+    font-size: var(--font-size-large);
+    margin-top: var(--spacing);
+}
+
+.featured p {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    margin-top: var(--spacing);
+    text-align: justify; /* Zarovnání textu do bloku */
+}
+
+/* Ostatní články */
 article,
 aside {
     background-color: var(--background-color);
     padding: var(--spacing-large);
     border-radius: 5px;
+    max-width: 100%;
+    text-align: center;
 }
 
-/* Desktop view */
-@media (min-width: 768px) {
-    nav {
-        flex-wrap: nowrap;
-    }
+article img,
+aside img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
 
+article h3,
+aside h3 {
+    font-size: 1rem; /* Menší nadpis než hlavní článek */
+    margin-top: var(--spacing);
+}
+
+article p,
+aside p {
+    font-size: 0.9rem; /* Menší text než hlavní článek */
+    line-height: 1.4;
+    margin-top: var(--spacing);
+    text-align: justify;
+}
+
+/* Střední a velké obrazovky */
+@media (min-width: 768px) {
     .nav-links {
         flex: 1 1 auto;
         flex-direction: row;
@@ -145,23 +176,37 @@ aside {
     }
 
     .content-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr repeat(3, 1fr); /* Tři sloupce pro ostatní články */
     }
 
     .featured {
-        grid-column: span 2;
+        grid-column: 1 / -1; /* Zabírá celou šířku mřížky */
     }
 }
 
-/* Large screens */
 @media (min-width: 1200px) {
     .content-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Tři sloupce zůstávají */
         max-width: 1200px;
         margin: 0 auto;
     }
 
     .featured {
-        grid-column: span 3;
+        grid-column: 1 / -1; /* Stále zabírá celou šířku mřížky */
+    }
+
+    article img,
+    aside img {
+        max-height: 150px; /* Menší obrázky na velkých obrazovkách */
+    }
+
+    article h3,
+    aside h3 {
+        font-size: 0.9rem; /* Menší nadpis */
+    }
+
+    article p,
+    aside p {
+        font-size: 0.8rem; /* Menší text */
     }
 }
