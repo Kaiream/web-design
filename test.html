@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iZítra.cz</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="iZITRA.cz Logo">
+        </a>
+
+        <!-- Burger menu -->
+        <button class="burger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="domaci.html">Domácí</a></li>
+                <li><a href="zahranicni.html">Zahraniční</a></li>
+                <li><a href="sport.html">Sport</a></li>
+                <li><a href="kultura.html">Kultura</a></li>
+                <li><a href="pocasi.html">Počasí</a></li>
+                <li><a href="redakce.html">Redakce</a></li>
+                <li><a href="premium.html" class="premium">Premium</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search field -->
+        <div class="search">
+            <form action="vyhledavani.html">
+                <input type="text" placeholder="Vyhledávání..." class="search-input">
+                <button type="submit" class="search-submit">›</button>
+            </form>
+        </div>
+    </header>
+
+    <script>
+        // Toggle hamburger menu
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burgerMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

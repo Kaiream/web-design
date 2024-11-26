@@ -1,0 +1,198 @@
+:root {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --highlight-color: #ffcc00;
+    --font-size: 16px;
+    --spacing: 15px;
+    --burger-bg: #444444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: var(--text-color);
+}
+
+.header {
+    width: 100%;
+    padding: var(--spacing);
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand img {
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px;
+    height: 28px;
+    background-color: var(--burger-bg);
+    border: 2px solid var(--highlight-color);
+    border-radius: 6px;
+    cursor: pointer;
+    align-items: center;
+    padding: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    order: 3;
+}
+
+.burger-menu span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--text-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing);
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--highlight-color);
+}
+
+.nav-links .premium {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links .premium:hover {
+    filter: brightness(1.1);
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end; /* Vyhledávání zarovnáno doprava */
+    margin-left: auto;
+}
+
+.search form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Šířka vyhledávacího pole */
+}
+
+.search-input {
+    width: 100%;
+    padding: 9px 40px 9px 12px; /* Rezerva pro tlačítko na pravé straně */
+    border: 1px solid #555555;
+    border-radius: 4px;
+    background-color: #444444;
+    color: var(--text-color);
+    font-size: var(--font-size);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 0 2px #ffcc0033;
+}
+
+.search-submit {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--highlight-color);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.search-submit:hover {
+    color: var(--text-color);
+}
+
+@media (max-width: 1180px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .brand img {
+        height: 30px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: var(--spacing);
+        background-color: var(--bg-color);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: var(--spacing);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .search form {
+        max-width: 100%;
+    }
+}
