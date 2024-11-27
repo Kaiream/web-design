@@ -33,14 +33,19 @@
             </ul>
         </nav>
 
-        <!-- Search field -->
-        <div class="search">
-            <form action="vyhledavani.html">
-                <input type="text" placeholder="Vyhledávání..." class="search-input">
-                <button type="submit" class="search-submit">›</button>
-            </form>
-        </div>
+        <!-- Search button -->
+        <button class="search-toggle" aria-label="Search">
+            🔍
+        </button>
     </header>
+
+    <!-- Search field -->
+    <div class="search">
+        <form action="vyhledavani.html" class="search-form">
+            <input type="text" placeholder="Vyhledávání..." class="search-input">
+            <button type="submit" class="search-submit">✔</button>
+        </form>
+    </div>
 
     <script>
         // Toggle hamburger menu
@@ -50,6 +55,14 @@
         burgerMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             burgerMenu.classList.toggle('open');
+        });
+
+        // Toggle search field visibility on mobile
+        const searchToggle = document.querySelector('.search-toggle');
+        const search = document.querySelector('.search');
+
+        searchToggle.addEventListener('click', () => {
+            search.classList.toggle('active');
         });
     </script>
 </body>

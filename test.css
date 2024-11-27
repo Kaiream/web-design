@@ -113,25 +113,34 @@ body {
 }
 
 .search {
-    position: relative;
+    width: 100%;
     display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: flex-end; /* Vyhledávání zarovnáno doprava */
-    margin-left: auto;
+    justify-content: center;
+    background-color: var(--bg-color);
+    padding: var(--spacing);
+    z-index: 999;
 }
 
-.search form {
-    position: relative;
+.search.hidden {
+    display: none; /* Hide search on mobile screens unless toggled */
+}
+
+.search.active {
+    display: flex; /* Show search when toggled */
+    position: fixed;
+    top: 60px; /* Appears directly below the navbar */
+}
+
+.search-form {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 300px; /* Šířka vyhledávacího pole */
+    max-width: 600px;
 }
 
 .search-input {
-    width: 100%;
-    padding: 9px 40px 9px 12px; /* Rezerva pro tlačítko na pravé straně */
+    flex: 1;
+    padding: 9px 40px 9px 12px;
     border: 1px solid #555555;
     border-radius: 4px;
     background-color: #444444;
@@ -146,10 +155,7 @@ body {
 }
 
 .search-submit {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 10px;
     background: none;
     border: none;
     color: var(--highlight-color);
@@ -158,21 +164,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }
 
 .search-submit:hover {
     color: var(--text-color);
+    background-color: var(--highlight-color);
 }
 
-@media (max-width: 1180px) {
+.search-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.search-toggle:hover {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+}
+
+@media (max-width: 1110px) {
     .burger-menu {
         display: flex;
-    }
-
-    .brand img {
-        height: 30px;
     }
 
     .nav-links {
@@ -192,7 +213,20 @@ body {
         display: flex;
     }
 
-    .search form {
-        max-width: 100%;
+    .search {
+        display: none; /* Hide the search bar by default on mobile */
+    }
+
+    .search.active {
+        display: flex; /* Show the search bar when toggled */
+        position: fixed;
+        top: 60px; /* Align it directly below the navbar */
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: var(--spacing);
+    }
+
+    .search-toggle {
+        display: block; /* Show the toggle button for mobile */
     }
 }
