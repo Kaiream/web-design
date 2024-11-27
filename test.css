@@ -19,14 +19,15 @@ body {
     color: var(--text-color);
 }
 
+/* Base header layout */
 .header {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: var(--spacing);
     background-color: var(--bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
 }
@@ -112,40 +113,44 @@ body {
     filter: brightness(1.1);
 }
 
-.search {
-    width: 100%;
+/* Desktop search */
+.search-desktop {
     display: flex;
-    justify-content: center;
-    background-color: var(--bg-color);
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.search-desktop .search-form {
+    position: relative;
+    width: 300px;
+}
+
+/* Mobile search */
+.search-mobile {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
     padding: var(--spacing);
+    background-color: var(--bg-color);
     z-index: 999;
 }
 
-.search.hidden {
-    display: none; /* Hide search on mobile screens unless toggled */
-}
-
-.search.active {
-    display: flex; /* Show search when toggled */
-    position: fixed;
-    top: 60px; /* Appears directly below the navbar */
-}
-
+/* Shared search styles */
 .search-form {
     display: flex;
-    align-items: center;
     width: 100%;
-    max-width: 600px;
 }
 
 .search-input {
-    flex: 1;
-    padding: 9px 40px 9px 12px;
+    width: 100%;
+    padding: 8px 40px 8px 12px;
     border: 1px solid #555555;
     border-radius: 4px;
     background-color: #444444;
     color: var(--text-color);
-    font-size: var(--font-size);
 }
 
 .search-input:focus {
@@ -155,18 +160,14 @@ body {
 }
 
 .search-submit {
-    margin-left: 10px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
-    color: var(--highlight-color);
-    font-size: 18px;
+    color: var(--text-color);
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
 }
 
 .search-submit:hover {
@@ -229,10 +230,25 @@ body {
     .search-toggle {
         display: block; /* Show the toggle button for mobile */
     }
+
+    .search-desktop {
+        display: none;
+    }
+
+    .search-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: none;
+        color: var(--text-color);
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .search-mobile.active {
+        display: block;
+    }
 }
-
-
-
-
-
-

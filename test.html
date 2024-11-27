@@ -13,13 +13,6 @@
             <img src="images/logo.png" alt="iZITRA.cz Logo">
         </a>
 
-        <!-- Burger menu -->
-        <button class="burger-menu" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
         <!-- Navigation -->
         <nav class="nav">
             <ul class="nav-links">
@@ -33,14 +26,29 @@
             </ul>
         </nav>
 
-        <!-- Search button -->
+        <!-- Desktop Search -->
+        <div class="search-desktop">
+            <form action="vyhledavani.html" class="search-form">
+                <input type="text" placeholder="Vyhledávání..." class="search-input">
+                <button type="submit" class="search-submit">✔</button>
+            </form>
+        </div>
+
+        <!-- Mobile Search Toggle -->
         <button class="search-toggle" aria-label="Search">
             🔍
         </button>
+
+        <!-- Burger menu -->
+        <button class="burger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <!-- Search field -->
-    <div class="search">
+    <!-- Mobile Search -->
+    <div class="search-mobile">
         <form action="vyhledavani.html" class="search-form">
             <input type="text" placeholder="Vyhledávání..." class="search-input">
             <button type="submit" class="search-submit">✔</button>
@@ -63,6 +71,12 @@
 
         searchToggle.addEventListener('click', () => {
             search.classList.toggle('active');
+        });
+
+        const searchMobile = document.querySelector('.search-mobile');
+
+        searchToggle.addEventListener('click', () => {
+            searchMobile.classList.toggle('active');
         });
     </script>
 
