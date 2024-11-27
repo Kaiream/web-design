@@ -15,6 +15,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    font-weight: bold;
     background-color: #1e1e1e;
     color: var(--text-color);
 }
@@ -142,6 +143,7 @@ body {
 .search-form {
     display: flex;
     width: 100%;
+    position: relative;
 }
 
 .search-input {
@@ -168,11 +170,16 @@ body {
     border: none;
     color: var(--text-color);
     cursor: pointer;
+    /* Increase hitbox size */
+    padding: 10px;
+    /* Make the icon larger */
+    font-size: 18px;
+    /* Smooth hover effect */
+    transition: color 0.3s ease;
 }
 
 .search-submit:hover {
-    color: var(--text-color);
-    background-color: var(--highlight-color);
+    color: var(--highlight-color);
 }
 
 .search-toggle {
@@ -192,7 +199,7 @@ body {
     color: var(--bg-color);
 }
 
-@media (max-width: 1110px) {
+@media (max-width: 1300px) {
     .burger-menu {
         display: flex;
     }
@@ -251,4 +258,14 @@ body {
     .search-mobile.active {
         display: block;
     }
+
+    .search-form {
+        position: relative; /* Reinforce relative positioning */
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
 }
