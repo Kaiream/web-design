@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="cs">
+<!-- Hlavička stránky s meta tagy a odkazy na styly -->
 <head>
     <meta charset="UTF-8">
+    <!-- Nastavení viewportu pro správné zobrazení na mobilních zařízeních -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Čerstvé domácí zprávičky | iZítra.cz</title>
+    <meta name="description" content="Výsledek vyhledávání na iZítra.cz - zde se zobrazí výsledek vašeho vyhledávání">
+    <title>Výsledek vyhledávání | iZítra.cz</title>
     <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Hlavní navigace webu včetně loga a vyhledávání -->
     <header>
         <a href="index.html" class="brand">
             <img src="images/logo.png" alt="iZITRA.cz Logo"/>
@@ -33,21 +36,20 @@
         </div>
     </header>
 
-    <hr class="lines-header"></hr>
+    <hr class="lines-header" />
 
-    <!-- Main content -->
+    <!-- Hlavní obsah stránky vyhledávání -->
     <main class="main-content">
-
-        <!-- Breadcrumb navigation -->
+        <!-- Drobečková navigace pro zlepšení orientace na webu -->
         <nav class="breadcrumb">
             <a href="index.html">iZ.cz</a>
             <span class="breadcrumb-separator"> / </span>
             <a href="#">Hledat</a>
         </nav>
+        <!-- Nadpis stránky bez podtžítka -->
+        <h1 class="section-title no-after">Výsledek vyhledávání</h1>
 
-        <h1 class="section-title minimal-title no-after">Výsledek vyhledávání</h1>
-
-        <!-- Search Bar Section -->
+        <!-- Vyhledávací pole -->
         <section class="search-bar-container">
             <form class="search">
                 <input type="search" placeholder="Upravit vyhledávání...">
@@ -55,59 +57,59 @@
             </form>
         </section>
 
-        <!-- Search Results -->
+        <!-- Výsledky vyhledávání -->
         <section class="article-list-vertical">
-            <!-- Result 1 -->
-            <article class="list-item">
+            <!-- Ukázka výsledku 1 -->
+            <article class="list-item"> <!-- Zobrazení relevantního článku -->
                 <a href="clanek.html"><img src="https://picsum.photos/100/100?random=21" alt="Výsledek 1"></a>
                 <div class="list-content">
-                    <span class="category">Sport</span>
-                    <h3><a href="clanek.html">Češi postupují na EURO 2024 po vítězství nad Moldavskem</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus interdum nibh ac mollis. Ut ut nisl elit.</p>
+                    <span class="category">SPORT</span>
+                    <h3><a href="clanek.htm l" class="article-link">Češi postupují na EURO 2024 po vítězství nad Moldavskem</a></h3>
+                    <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus interdum nibh ac mollis. Ut ut nisl elit.</p>
                     <span class="date-author">15. listopadu 2024 • 5 min čtení</span>
                 </div>
             </article>
 
-            <!-- Result 2 -->
+            <!-- Ukázka výsledku 2 -->
             <article class="list-item">
                 <a href="clanek.html"><img src="https://picsum.photos/100/100?random=22" alt="Výsledek 2"></a>
                 <div class="list-content">
-                    <span class="category">Domácí</span>
-                    <h3><a href="clanek.html">Nový systém dopravního značení v Praze</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at dolor mauris. Proin non condimentum ex, eget dignissim sem.</p>
+                    <span class="category">DOMÁCÍ</span>
+                    <h3><a href="clanek.html" class="article-link">Nový systém dopravního značení v Praze</a></h3>
+                    <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at dolor mauris. Proin non condimentum ex, eget dignissim sem.</p>
                     <span class="date-author">14. listopadu 2024 • 3 min čtení</span>
                 </div>
             </article>
 
-            <!-- Result 3 -->
+            <!-- Ukázka výsledku 3 -->
             <article class="list-item">
                 <a href="clanek.html"><img src="https://picsum.photos/100/100?random=23" alt="Výsledek 3"></a>
                 <div class="list-content">
-                    <span class="category">Kultura</span>
-                    <h3><a href="clanek.html">Národní divadlo uvádí novou sezónu</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat varius lorem, ut ultricies orci accumsan sed.</p>
+                    <span class="category">KULTURA</span>
+                    <h3><a href="clanek.html" class="article-link">Národní divadlo uvádí novou sezónu</a></h3>
+                    <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat varius lorem, ut ultricies orci accumsan sed.</p>
                     <span class="date-author">13. listopadu 2024 • 4 min čtení</span>
                 </div>
             </article>
 
-            <!-- Result 4 -->
+            <!-- Ukázka výsledku 4 -->
             <article class="list-item">
                 <a href="clanek.html"><img src="https://picsum.photos/100/100?random=24" alt="Výsledek 4"></a>
                 <div class="list-content">
-                    <span class="category">Zahraniční</span>
-                    <h3><a href="clanek.html">Summit EU řeší klimatickou změnu</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tempus felis.</p>
+                    <span class="category">ZAHRANIČNÍ</span>
+                    <h3><a href="clanek.html" class="article-link">Summit EU řeší klimatickou změnu</a></h3>
+                    <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id tempus felis.</p>
                     <span class="date-author">12. listopadu 2024 • 6 min čtení</span>
                 </div>
             </article>
 
-            <!-- Result 5 -->
+            <!-- Ukázka výsledku 5 -->
             <article class="list-item">
                 <a href="clanek.html"><img src="https://picsum.photos/100/100?random=25" alt="Výsledek 4"></a>
                 <div class="list-content">
-                    <span class="category">Zahraniční</span>
-                    <h3><a href="clanek.html">Auto nám zničil medvěd, řekli Američané pojišťovně. Byl to člověk v kostýmu</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, purus eget aliquet ultrices, sapien ex malesuada felis.</p>
+                    <span class="category">ZAHRANIČNÍ</span>
+                    <h3><a href="clanek.html" class="article-link">Auto nám zničil medvěd, řekli Američané pojišťovně. Byl to člověk v kostýmu</a></h3>
+                    <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, purus eget aliquet ultrices, sapien ex malesuada felis.</p>
                     <span class="date-author">12. listopadu 2024 • 6 min čtení</span>
                 </div>
             </article>
@@ -123,7 +125,7 @@
         </div>
     </main>
 
-    <hr class="lines-main"></hr>
+    <hr class="footer-line" />
 
     <!-- Footer -->
     <footer class="footer">

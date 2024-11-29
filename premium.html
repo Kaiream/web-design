@@ -1,66 +1,73 @@
 <!DOCTYPE html>
 <html lang="cs">
+<!-- Hlavička stránky s meta tagy a odkazy na styly -->
 <head>
     <meta charset="UTF-8">
+    <!-- Nastavení viewportu pro správné zobrazení na mobilních zařízeních -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium iZítra.cz - prosím podpořte nás, jsme chudí a utahaní">
     <title>Členství | iSkrblíci.cz</title>
     <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="subscription-container">
+    <!-- Hlavní obsah stránky s informacemi ohledně premium a jak ho získat -->
+    <main class="subscription-container">
         <div class="subscription-header">
             <h1>Získat členství</h1>
             <a href="index.html" class="close-button">×</a>
         </div>
         
-        <!-- Dropdown menu for mobile responsiveness -->
-        <div class="subscription-dropdown">
+        <!-- Dropdown menu pro zlepšený vzhled na mobilních zařízení -->
+        <section class="subscription-dropdown">
             <select>
                 <option value="monthly">Měsíční předplatné</option>
                 <option value="yearly">Roční předplatné</option>
                 <option value="biennial">Dvouleté předplatné</option>
             </select>
-        </div>
+        </section>
 
-        <div class="subscription-tabs">
-            <button class="tab active">Měsíční předplatné</button>
-            <button class="tab">Roční předplatné</button>
-            <button class="tab">Dvouleté předplatné</button>
-        </div>
+        <!-- Tlačítka pro výběr typu předplatného -->
+        <section class="subscription-tabs">
+            <button class="subscription-option active">Měsíční předplatné</button>
+            <button class="subscription-option">Roční předplatné</button>
+            <button class="subscription-option">Dvouleté předplatné</button>
+        </section>
         
-        <div class="price-display">
-            <div class="price-label">První měsíc jen</div>
-            <div class="price">39 Kč</div>
-            <div class="next-payment">Příští opakovaná platba 01. 01. 2025 za 999,999,999 Kč/měsíc</div>
-        </div>
+        <!-- Informace o ceně a platbě -->
+        <section class="price-display">
+            <p class="price-description price-label">První měsíc jen</p>
+            <p class="price-cost">39 Kč</p>
+            <p class="price-description next-payment">Příští opakovaná platba 01. 01. 2025 za 999,999,999 Kč/měsíc</p>
+        </section>
         
-        <div class="payment-options">
+        <!-- Možnosti platby -->
+        <section class="payment-options">
             <label class="payment-option">
                 <input type="radio" name="payment">
-                <span>Platba kartou</span>
+                <p>Platba kartou</p>
             </label>
             <label class="payment-option">
                 <input type="radio" name="payment">
-                <span>Google Pay</span>
+                <p>Google Pay</p>
             </label>
             <label class="payment-option">
                 <input type="radio" name="payment">
-                <span>Apple Pay</span>
+                <p>Apple Pay</p>
             </label>
             <label class="payment-option">
                 <input type="radio" name="payment" checked>
-                <span>Krádež</span>
+                <p>Krádež</p> <!-- Toto je vtip, nezneužívat prosím (fakt ale) -->
             </label>
-        </div>
+        </section>
         
+        <!-- Tlačítko pro objednání premium -->
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1">
             <button class="submit-button">Objednat Premium</button>
         </a>
         
-        <div class="payment-terms">
-            Kliknutím na tlačítko souhlasíte s darováním vašeho majetku společnosti iZítra.cz.
-        </div>
-    </div>
-    </body>
+        <!-- Hodně fér podmínky platby -->
+        <p class="payment-terms">Kliknutím na tlačítko souhlasíte s darováním vašeho majetku společnosti iZítra.cz.</p>
+    </main>
+</body>
 </html>
