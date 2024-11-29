@@ -40,137 +40,271 @@ body {
 
 /* HEADER */
 /* Navigation menu */
-header {
-    width: 100%;
-    padding: 15px 30px;
-    background-color: var(--color-surface);
+
+
+
+
+/* Base header layout */
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--color-surface-light);
     position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
 }
 
 .brand img {
-    height: 40px; /* Adjust the height as needed */
-    vertical-align: middle;
-    margin-bottom: 5px;
+    height: 40px;
+    transition: all 0.3s ease;
 }
 
-nav ul {
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px;
+    height: 28px;
+    background-color: var(--color-surface-bright-bg);
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    cursor: pointer;
+    align-items: center;
+    padding: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    order: 3;
+}
+
+.burger-menu span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav {
     display: flex;
-    padding-left: 175px;
-    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-nav ul li a {
-    color: var(--text-primary);
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li a {
     text-decoration: none;
-    padding: 0 20px;
-    font-size: var(--font-size-ml);
-    font-weight: bold;
-    transition: color 0.3s;
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     color: var(--color-primary);
 }
 
-.premium-button {
+.nav-links .premium {
     background-color: var(--color-primary);
-    color: #000000;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
+    color: var(--color-surface-light);
+    border-radius: 5px;
     font-weight: bold;
-    margin-right: 16px;
+    padding: 0.5rem 1rem;
 }
 
-.premium-button:hover {
-    transition: filter 0.3s ease;
-    filter: brightness(1.2);
+.nav-links .premium:hover {
+    filter: brightness(1.1);
 }
 
-/* Search field */
-.search input {
-    padding: 9px 0 9px 12px;
-    background-color: var(--color-surface-light);
-    border: 1px solid var(--color-surface-bright);
-    color: var(--text-primary);
-    border-radius: 8px;
+/* Desktop search */
+.search-desktop {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.search-desktop .search-form {
+    position: relative;
+    width: 300px;
+}
+
+/* Mobile search */
+.search-mobile {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
     width: 100%;
-    padding-right: 30px; /* Make room for the button */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    background-color: var(--color-surface-light);
+    z-index: 999;
 }
 
-.search input:focus {
+/* Shared search styles */
+.search-form {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 40px 8px 12px;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    background-color: #444444;
+    color: var(--text-primary);
+}
+
+.search-input:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 2px #ffcc0033;
 }
 
-.search input::placeholder {
-    color: var(--text-dim);
-}
-
-.search {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
 .search-submit {
     position: absolute;
     right: 8px;
-    top: 45%; /* Position at vertical middle */
-    transform: translateY(-50%); /* Offset by half height for perfect centering */
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
-    color: var(--text-dim);
-    font-size: var(--font-size-ml);
+    color: var(--text-primary);
     cursor: pointer;
-    padding: 0px 8px;
-    transition: color 0.2s ease;
+    /* Increase hitbox size */
+    padding: 10px;
+    /* Make the icon larger */
+    font-size: 18px;
+    /* Smooth hover effect */
+    transition: color 0.3s ease;
 }
 
 .search-submit:hover {
-    color: var(--text-primary);
+    color: var(--color-primary);
 }
 
-.lines-header {
+.search-toggle {
+    display: none;
+    background: none;
     border: none;
-    height: 3px;
-    background-color: #aec6cf;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin-top: 75px;
-    z-index: 999;
+    color: var(--text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
-/* Breadcrumb navigation */
-.breadcrumb {
-    margin: 20px 30px;
-    font-size: var(--font-size-xs);
-  }
-  
-  .breadcrumb a {
-    color: var(--text-dim);
-    text-decoration: none;
-  }
-  
-  .breadcrumb a:hover {
-    text-decoration: underline;
-  }
-
-  .breadcrumb-separator {
-    color: var(--text-dim); /* Same color as the breadcrumb links */
-    margin: 0 2px 0 4px;    /* Optional: add spacing around the separator */
-    white-space: nowrap; /* Prevents the separator from wrapping */
-    display: inline-block; /* Allows the transform to work properly */
-    transform: scaleY(1.5); /* Scales the separator height by 1.5 times */
+.search-toggle:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface-light);
 }
+
+@media (max-width: 1300px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--color-surface-light);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: 15px;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .search {
+        display: none; /* Hide the search bar by default on mobile */
+    }
+
+    .search.active {
+        display: flex; /* Show the search bar when toggled */
+        position: fixed;
+        top: 60px; /* Align it directly below the navbar */
+        width: 100%;
+        background-color: var(--color-surface-light);
+        padding: 15px;
+    }
+
+    .search-toggle {
+        display: block; /* Show the toggle button for mobile */
+    }
+
+    .search-desktop {
+        display: none;
+    }
+
+    .search-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .search-mobile.active {
+        display: block;
+    }
+
+    .search-form {
+        position: relative; /* Reinforce relative positioning */
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Main content container */
 /* Hlavní obsah s dolním odsazením */
@@ -338,91 +472,85 @@ nav ul li a:hover {
 }
 
 /* FOOTER */
+/* Footer styling */
 .footer {
     background-color: var(--color-surface);
-    padding: 40px 30px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
     color: var(--text-primary);
     font-size: var(--font-size-sm);
+    text-align: center;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.footer-brand, .footer-links, .footer-social {
-    flex: 1;
-    margin: 10px;
-}
-
-.footer-brand p {
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
-    margin-top: 10px;
+.footer-brand, .footer-links, .footer-premium, .footer-social {
     text-align: center;
+    width: 100%;
 }
 
 .footer-brand img {
-    height: 30px;
-    vertical-align: middle;
+    height: 40px;
     margin-bottom: 10px;
-    padding-left: 125px;
 }
 
-.footer hr {
-    width: 20%;
-    margin: 0 auto;
-    margin-top:50px
+.footer-brand p {
+    font-size: 14px;
+    color: #cccccc;
+    margin-top: 10px;
 }
 
-.footer-links h4 {
-    font-size: var(--font-size-ml);
-    color: var(--text-primary);
-    margin-top: 8px;
-    margin-bottom: 20px;
-    text-align: center;
+.footer-links h4, .footer-premium h4, .footer-social h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .footer-links ul {
     display: flex;
-    list-style: none;
-    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
 }
 
 .footer-links ul li a {
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-links ul li a:hover {
-    color: var(--color-primary);
+    color: #ffcc00;
 }
 
-/* Sociální sítě footru */
-.footer-social p {
-    font-size: var(--font-size-ml);
+.footer-premium p a {
+    color: #ffcc00;
     font-weight: bold;
-    color: var(--text-primary);
-    padding-left: 45px;
-    margin-top: 8px;
-    margin-bottom: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.social-icons {
-    margin-top: 10px;
+.footer-premium p a:hover {
+    color: #ffffff;
 }
 
-.social-icons a {
-    display: inline-block;
-    margin-right: 10px;
+.footer-social .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.social-icons img {
+.social-icons a img {
     width: 24px;
     height: 24px;
     filter: brightness(0) invert(1);
@@ -433,16 +561,17 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-.footer-line {
-    border: none;
-    height: 3px;
-    background-color: #aec6cf;
+.section-divider {
+    margin: 20px auto; /* Centers the line horizontally */
+    width: 50%; /* Narrower line */
+    border: 0;
+    border-top: 1px solid #555555;
+    display: block; /* Ensures it behaves like a block element */
 }
 
 .copyright {
-    margin-top: 20px;
-    text-align: center;
-    color: var(--text-muted);
+    font-size: 12px;
+    color: #999999;
 }
 
 /* CLANEK */
