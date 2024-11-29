@@ -310,6 +310,12 @@ nav ul li a:hover {
     margin-bottom: 5px;
 }
 
+.list-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .list-content h3 {
     font-size: var(--font-size-md);
     color: var(--text-primary);
