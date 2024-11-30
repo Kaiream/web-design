@@ -219,6 +219,7 @@ body {
     padding: 8px;
     border-radius: 50%;
     transition: background-color 0.3s ease;
+    transform: translateY(2px);
 }
 
 @media screen and (max-width: 1400px) {
@@ -287,15 +288,6 @@ body {
     display: inline-block; /* Allows the transform to work properly */
     transform: scaleY(1.5); /* Scales the separator height by 1.5 times */
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -595,7 +587,6 @@ body {
 .social-icons a img {
     width: 24px;
     height: 24px;
-    filter: brightness(0) invert(1);
     transition: transform 0.3s;
 }
 
@@ -759,89 +750,146 @@ body {
     margin-bottom: 20px;
 }
 
+/*Koentáře*/
+/* Comments section - Mobile first */
+.comments-section {
+    padding: 20px 15px;
+    margin: 30px 0;
+    background-color: var(--color-surface);
+    border-radius: 8px;
+}
+
+.comments-section h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
 .comment-form {
+    margin-bottom: 30px;
     display: flex;
+    flex-direction: row; /* Change to row to place button next to input */
     gap: 10px;
+    align-items: stretch; /* Make children stretch to match heights */
 }
 
 .comment-input {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #555555;
-    border-radius: 4px;
+    min-height: 50px;
+    padding: 12px;
+    border: 1px solid var(--color-surface-light);
+    border-radius: 8px;
     background-color: var(--color-surface-bright);
     color: var(--text-primary);
-    resize: none;
-    font-size: var(--font-size-md);
+    resize: vertical;
 }
 
 .comment-submit {
-    padding: 10px 20px;
+    align-self: stretch; /* Make button stretch to match input height */
+    padding: 0 25px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
     border: none;
-    background-color: #c60707;
-    color: white;
     border-radius: 4px;
-    font-size: var(--font-size-md);
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: filter 0.3s ease;
 }
 
 .comment-submit:hover {
-    background-color: #ff0000;
+    filter: brightness(1.1);
 }
 
 .comments-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .comment {
     display: flex;
     gap: 15px;
-    align-items: flex-start;
     padding: 15px;
-    background-color: var(--color-surface-bright);
+    background-color: var(--color-surface-light);
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.comment-user-icon {
-    align-self: center;
-    width: 50px;
-    height: 50px;
+.comment-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-.comment-content {
+.comment-body {
     flex: 1;
 }
 
-.comment-author {
-    font-weight: bold;
-    font-size: var(--font-size-md);
-    color: var(--color-primary);
-    margin-bottom: 5px;
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
 }
 
-.comment-text {
+.comment-header h3 {
     font-size: var(--font-size-md);
     color: var(--text-primary);
-    margin-bottom: 10px;
-}
-
-.comment-footer {
-    display: flex;
-    gap: 10px;
-    font-size: var(--font-size-sm);
-    color: var(--text-muted);
 }
 
 .comment-date {
-    margin-top: 2px;
     font-size: var(--font-size-xs);
-    color: #888888;
+    color: var(--text-muted);
 }
+
+.comment-body p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .comments-section {
+        padding: 30px;
+        margin: 40px 0;
+    }
+
+    .comment-form {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .comment-input {
+        flex: 1;
+    }
+
+    .comment-submit {
+        padding: 12px 30px;
+    }
+
+    .comment {
+        padding: 20px;
+    }
+
+    .comment-avatar img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .action-item {
     font-size: var(--font-size-sm);
@@ -1518,7 +1566,7 @@ body {
     flex-shrink: 0; /* Zabránění zmenšení ikony při úbytku šířky stránek */
     align-items: center;
     justify-content: center;
-    background-color: var(--color-background);
+    /*background-color: var(--color-background);*/
     transition: transform 0.2s;
 }
 
@@ -1526,14 +1574,8 @@ body {
     transform: scale(1.1); /* Zvětšení ikony při najetí myší - legitimace responzivity */
 }
 
-.social-icon svg {
-    fill: var(--text-primary);
-    width: 24px;
-    height: 24px;
-    transform: translate(24%, 24%); /* Transformace pro centrování SVG ikony, aby seděla do rámečku */
-}
 
-/* Barvy pro jednotlivé sociální sítě */
+/* Barvy pro jednotlivé sociální sítě 
 .instagram {
     background-color: #E4405F;
 }
@@ -1549,6 +1591,7 @@ body {
 .twitter {
     background-color: #000000;
 }
+*/
 
 /* Nastavení ikony email, telefon a LinkedIn */
 .contact-choice {

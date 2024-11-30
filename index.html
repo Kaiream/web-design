@@ -6,8 +6,10 @@
     <title>iZítra.cz</title>
     <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <a href="index.html" class="brand">
@@ -37,7 +39,10 @@
 
         <!-- Mobile Search Toggle -->
         <button class="search-toggle" aria-label="Search">
-            🔍
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="10" cy="10" r="6"></circle>
+                <line x1="15" y1="15" x2="22" y2="22"></line>
+              </svg>                                                      
         </button>
 
         <!-- Burger menu -->
@@ -55,31 +60,6 @@
             <button type="submit" class="search-submit">›</button>
         </form>
     </div>
-
-    <script>
-        // Toggle hamburger menu
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        burgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            burgerMenu.classList.toggle('open');
-        });
-
-        // Toggle search field visibility on mobile
-        const searchToggle = document.querySelector('.search-toggle');
-        const search = document.querySelector('.search');
-
-        searchToggle.addEventListener('click', () => {
-            search.classList.toggle('active');
-        });
-
-        const searchMobile = document.querySelector('.search-mobile');
-
-        searchToggle.addEventListener('click', () => {
-            searchMobile.classList.toggle('active');
-        });
-    </script>
 
     <hr class="lines-header"></hr>
 
@@ -203,17 +183,18 @@
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
                 </div>
             </div>
         </div>
-        <hr class="section-divider" />
+        <hr class="section-divider"/>
         <p class="copyright">
             &copy; 2024 iZítra.cz<br>
-            Ritter Radek, Boufala Karim
+            Ritter Radek, Boufala Karim, Martin Daňha, Michal Lukeš
         </p>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>

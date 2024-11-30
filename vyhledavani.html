@@ -11,32 +11,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hlavní navigace webu včetně loga a vyhledávání -->
-    <header>
+    <!-- Header -->
+    <header class="header">
         <a href="index.html" class="brand">
-            <img src="images/logo.png" alt="iZITRA.cz Logo"/>
+            <img src="images/logo.png" alt="Logo iZítra.cz">
         </a>
-        <nav>
-            <ul>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-links">
                 <li><a href="domaci.html">Domácí</a></li>
                 <li><a href="zahranicni.html">Zahraniční</a></li>
                 <li><a href="sport.html">Sport</a></li>
                 <li><a href="kultura.html">Kultura</a></li>
                 <li><a href="pocasi.html">Počasí</a></li>
                 <li><a href="redakce.html">Redakce</a></li>
+                <li><a href="premium.html" class="premium no-highlight">Premium</a></li>
             </ul>
         </nav>
 
-        <div class="search">
-            <a href="premium.html" class="premium-button">Premium</a>
-            <form action="vyhledavani.html" class="result">
-                <input type="text" placeholder="Vyhledávání...">
+        <!-- Desktop Search -->
+        <div class="search-desktop">
+            <form action="vyhledavani.html" class="search-form">
+                <input type="text" placeholder="Vyhledávání..." class="search-input">
                 <button type="submit" class="search-submit">›</button>
             </form>
         </div>
+
+        <!-- Mobile Search Toggle -->
+        <button class="search-toggle" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="10" cy="10" r="6"></circle>
+                <line x1="15" y1="15" x2="22" y2="22"></line>
+              </svg>                                                      
+        </button>
+
+        <!-- Burger menu -->
+        <button class="burger-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <hr class="lines-header" />
+    <!-- Mobile Search -->
+    <div class="search-mobile">
+        <form action="vyhledavani.html" class="search-form">
+            <input type="text" placeholder="Vyhledávání..." class="search-input">
+            <button type="submit" class="search-submit">›</button>
+        </form>
+    </div>
+
+    <hr class="lines-header"></hr>
 
     <!-- Hlavní obsah stránky vyhledávání -->
     <main class="main-content">
@@ -131,7 +157,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="images/logo.png" alt="iZITRA.cz Logo"/>
+                <img src="images/logo.png" alt="iZITRA.cz Logo" />
                 <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
             <div class="footer-links">
@@ -144,18 +170,25 @@
                     <li><a href="pocasi.html">Počasí</a></li>
                 </ul>
             </div>
+            <div class="footer-premium">
+                <h4>Premium</h4>
+                <p><a href="premium.html">Získejte přístup k exkluzivním funkcím</a></p>
+            </div>
             <div class="footer-social">
-                <p>Sledujte nás</p>
+                <h4>Sledujte nás</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
                 </div>
             </div>
         </div>
-        <br/>
-        <hr class="section-divider"></hr>
-        <p class="copyright">&copy; 2024 iZítra.cz<br>Všechna práva vyhrazena.</p>
+        <hr class="section-divider"/>
+        <p class="copyright">
+            &copy; 2024 iZítra.cz<br>
+            Ritter Radek, Boufala Karim, Martin Daňha, Michal Lukeš
+        </p>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
