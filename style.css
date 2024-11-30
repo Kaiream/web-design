@@ -46,27 +46,26 @@ body {
 
 /* Base header layout */
 .header {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-surface);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
-    background-color: var(--color-surface);
     position: fixed;
-    width: 100%;
     top: 0;
     z-index: 1000;
 }
 
 .brand img {
     height: 40px;
-    transition: all 0.3s ease;
 }
 
 .burger-menu {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 36px;
+    width: 32px;
     height: 28px;
     background-color: var(--color-surface-bright-bg);
     border: 2px solid var(--color-primary);
@@ -74,7 +73,6 @@ body {
     cursor: pointer;
     align-items: center;
     padding: 4px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
     order: 3;
 }
 
@@ -112,32 +110,36 @@ body {
     gap: 15px;
     flex-grow: 1;
     justify-content: center;
-    text-align: center; /* Center text alignment */
-
+    text-align: center; /* Center text alignment for burger menu */
 }
 
 .nav-links li a {
-    text-decoration: none;
-    color: var(--text-primary);
     padding: 8px 16px;
-    font-size: 16px;
+    color: var(--text-primary);
+    font-weight: bold;
+    font-size: var(--font-size-ml);
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .nav-links li a:hover {
     color: var(--color-primary);
 }
 
+.nav-links .premium.no-highlight {
+    color: #000000;
+}
+
 .nav-links .premium {
     padding: 8px 16px;
     background-color: var(--color-primary);
-    color: #000000;
     border-radius: 4px;
     font-weight: bold;
 }
 
 .nav-links .premium:hover {
-    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+    filter: brightness(1.2);
 }
 
 /* Desktop search */
@@ -161,7 +163,7 @@ body {
     left: 0;
     width: 100%;
     padding: 15px;
-    background-color: var(--color-surface-light);
+    background-color: var(--color-surface);
     z-index: 999;
 }
 
@@ -214,17 +216,22 @@ body {
     color: var(--text-primary);
     font-size: 20px;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 8px;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
-.search-toggle:hover {
-    background-color: var(--color-primary);
-    color: var(--color-surface-light);
+@media screen and (max-width: 1400px) {
+    .search-toggle, .search-mobile.active {
+        display: block; /* Show the toggle button for mobile */
+    }
+
+    .search-desktop {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1100px) {
     .burger-menu {
         display: flex;
     }
@@ -232,81 +239,30 @@ body {
     .nav-links {
         display: none;
         flex-direction: column;
-        gap: 15px;
-        background-color: var(--color-surface-light);
+        gap: 5px;
+        background-color: var(--color-surface);
         position: absolute;
         top: 100%;
         right: 0;
         left: 0;
         padding: 15px;
         z-index: 999;
-        flex-direction: column;
         align-items: center; /* Center items horizontally */
         width: 100%; /* Full width for proper centering */
-        padding: 15px;
     }
-    
 
     .nav-links.active {
         display: flex;
     }
 
     .nav-links li {
-        width: 100%; /* Full width for consistent centering */
+        width: 75%;
     }
 
     .nav-links li a {
         display: block; /* Make links block level for full clickable area */
         padding: 12px 16px; /* Slightly larger padding for mobile */
     }
-
-    .search {
-        display: none; /* Hide the search bar by default on mobile */
-    }
-
-    .search.active {
-        display: flex; /* Show the search bar when toggled */
-        position: fixed;
-        top: 60px; /* Align it directly below the navbar */
-        width: 100%;
-        background-color: var(--color-surface-light);
-        padding: 15px;
-    }
-
-    .search-toggle {
-        display: block; /* Show the toggle button for mobile */
-    }
-
-    .search-desktop {
-        display: none;
-    }
-
-    .search-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border: none;
-        background: none;
-        color: var(--text-primary);
-        cursor: pointer;
-        border-radius: 50%;
-    }
-
-    .search-mobile.active {
-        display: block;
-    }
-
-    .search-form {
-        position: relative; /* Reinforce relative positioning */
-        width: 100%;
-    }
-
-    .search-input {
-        width: 100%;
-    }
-
 }
 
 /* Breadcrumb navigation */
@@ -400,21 +356,20 @@ body {
     overflow: hidden;
 }
 
-.featured-article > a img {
+.featured-article-content {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.featured-article-content h1 {
+    margin-bottom: 8px;
+}
+
+.featured-article a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.featured-article img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-
-.featured-article .content {
-    padding: 15px;
 }
 
 .featured-article h1 {
@@ -422,29 +377,30 @@ body {
     margin-bottom: 10px;
 }
 
-.featured-article h1 a,
-.article-list-horizontal .list-content h3 a,
-.article-list-vertical .list-content h3 a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.featured-article h1 a:hover,
-.article-list-horizontal .list-content h3 a:hover,
-.article-list-vertical .list-content h3 a:hover {
-    color: var(--color-primary);
-}
-
-.featured-article p {
+.featured-article-description {
+    font-size: var(--font-size-md);
     color: var(--text-secondary);
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin: 5px 0;
 }
 
-.featured-article .author {
-    color: var(--text-muted);
+.article-description {
     font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 5px 0;
+    line-height: 1.25; /* Výška řádku pro lepší čitelnost */
+}
+
+.small-article-description {
+    font-size: var(--font-size-sm); /* Velikost textu náhledu */
+    color: var(--text-secondary); /* Barva textu náhledu */
+    margin-top: 8px;
+    line-height: 1.5; /* Výška řádku pro lepší čitelnost */
+}
+
+.date-author {
+    color: var(--text-muted);
+    font-size: var(--font-size-xs);
+    margin-top: 10px;
 }
 
 @media (min-width: 900px) {
@@ -459,7 +415,7 @@ body {
         height: 400px;
     }
 
-    .featured-article .content {
+    .featured-article-content {
         width: 50%;
         padding: 30px;
         display: flex;
@@ -470,30 +426,6 @@ body {
     .featured-article h1 {
         font-size: var(--font-size-xxl);
     }
-}
-
-.featured-article-content {
-    flex: 1;
-    padding: 20px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.featured-article-content h1 {
-    margin-bottom: 8px;
-}
-
-.article-description {
-    font-size: var(--font-size-md);
-    color: var(--text-secondary);
-    margin: 5px 0;
-}
-
-.date-author {
-    color: var(--text-muted);
-    font-size: var(--font-size-xs);
-    margin-top: 10px;
 }
 
 /* Odkazy v nadpisech článků */
@@ -530,9 +462,7 @@ body {
 /* Mobile layout */
 @media (max-width: 900px) {
     .article-list-horizontal {
-        grid-template-columns: 1fr; /* Single column */
-        gap: 15px;
-        padding: 0 15px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
     }
 }
 
@@ -573,13 +503,6 @@ body {
     font-size: var(--font-size-md);
     color: var(--text-primary);
     margin-top: 5px;
-}
-
-.small-article-description {
-    font-size: var(--font-size-sm); /* Velikost textu náhledu */
-    color: var(--text-secondary); /* Barva textu náhledu */
-    margin-top: 8px;
-    line-height: 1.5; /* Výška řádku pro lepší čitelnost */
 }
 
 /* Divider */
@@ -680,12 +603,9 @@ body {
     transform: scale(1.1);
 }
 
-.section-divider {
-    margin: 20px auto; /* Centers the line horizontally */
-    width: 50%; /* Narrower line */
-    border: 0;
-    border-top: 1px solid #555555;
-    display: block; /* Ensures it behaves like a block element */
+.footer hr {
+    width: 20%;
+    margin: 20px auto 20px auto;
 }
 
 .copyright {
