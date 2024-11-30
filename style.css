@@ -50,7 +50,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    background-color: var(--color-surface-light);
+    background-color: var(--color-surface);
     position: fixed;
     width: 100%;
     top: 0;
@@ -117,8 +117,8 @@ body {
 .nav-links li a {
     text-decoration: none;
     color: var(--text-primary);
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 8px 16px;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
@@ -127,11 +127,11 @@ body {
 }
 
 .nav-links .premium {
+    padding: 8px 16px;
     background-color: var(--color-primary);
-    color: var(--color-surface-light);
-    border-radius: 5px;
+    color: #000000;
+    border-radius: 4px;
     font-weight: bold;
-    padding: 0.5rem 1rem;
 }
 
 .nav-links .premium:hover {
@@ -172,11 +172,13 @@ body {
 
 .search-input {
     width: 100%;
-    padding: 8px 40px 8px 12px;
-    border: 1px solid #555555;
-    border-radius: 4px;
-    background-color: #444444;
-    color: var(--text-primary);
+    padding: 10px 40px 10px 14px;
+    border: 1px solid var(--color-surface-bright);
+    border-radius: 8px;
+    background-color: var(--color-surface-light);
+    color: var(--text-muted);
+    font-size: var(--font-size-md);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-input:focus {
@@ -188,22 +190,19 @@ body {
 .search-submit {
     position: absolute;
     right: 8px;
-    top: 50%;
+    top: 47.5%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: var(--text-primary);
+    color: var(--text-dim);
     cursor: pointer;
-    /* Increase hitbox size */
-    padding: 10px;
-    /* Make the icon larger */
-    font-size: 18px;
-    /* Smooth hover effect */
-    transition: color 0.3s ease;
+    padding: 0 10px;
+    font-size: var(--font-size-lg);
+    transition: color 0.2s ease;
 }
 
 .search-submit:hover {
-    color: var(--color-primary);
+    color: var(--text-primary);
 }
 
 .search-toggle {
@@ -223,7 +222,7 @@ body {
     color: var(--color-surface-light);
 }
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
     .burger-menu {
         display: flex;
     }
@@ -294,6 +293,28 @@ body {
 
 }
 
+/* Breadcrumb navigation */
+.breadcrumb {
+    margin: 20px 30px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .breadcrumb a {
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-separator {
+    color: var(--text-dim); /* Same color as the breadcrumb links */
+    margin: 0 2px 0 4px;    /* Optional: add spacing around the separator */
+    white-space: nowrap; /* Prevents the separator from wrapping */
+    display: inline-block; /* Allows the transform to work properly */
+    transform: scaleY(1.5); /* Scales the separator height by 1.5 times */
+}
 
 
 
@@ -659,7 +680,7 @@ body {
 }
 
 .recommended-articles h2 {
-    margin-bottom: 20px;
+    margin: 0 0 5px 10px;
 }
 
 /* Horizontální rozložení doporučených článků */
@@ -681,6 +702,22 @@ body {
 .recommended-article-list .list-item img {
     border-radius: 8px;
     margin-right: 15px;
+}
+
+@media screen and (max-width: 800px) {
+    .recommended-article-list {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+    
+    .recommended-article-list .list-item {
+        width: 90%; /* Wider items in column layout */
+    }
+
+    .recommended-articles h2 {
+        margin: 0 0 25px 15px;
+        font-size: var(--font-size-ml);
+    }
 }
 
 /* Komentáře */
@@ -801,7 +838,9 @@ body {
 
 /* POCASI */
 /* Weather Forecast Grid */
+
 .forecast-grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     gap: 16px;
@@ -825,6 +864,40 @@ body {
 .forecast-card:hover .day {
     color: var(--color-primary);
     transition: color 0.2s ease;
+}
+
+/* Navigation arrows for mobile */
+.nav-arrow {
+    position: absolute;
+    background: var(--color-surface);
+    border: none;
+    color: var(--text-primary);
+    font-size: var(--font-size-ml);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow.right {
+    display: none;
+    left: 97.5%;
+    top: 40%;
+}
+
+.nav-arrow.left {
+    display: none;
+    right: 97.5%;
+    top: 40%;
+}
+
+.nav-arrow:hover {
+    background: var(--color-surface-light);
+    color: var(--color-primary);
 }
 
 .day {
@@ -958,12 +1031,6 @@ body {
     pointer-events: auto;
 }
 
-@media screen and (max-width: 1024px) {
-    .weather-box {
-        display: none;
-    }
-}
-
 .weather-box:hover {
     transform: scale(1.025);
     z-index: 2;
@@ -989,7 +1056,6 @@ body {
     width: 70%;
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
 }
 
 .date-overlay {
@@ -1001,6 +1067,41 @@ body {
     border-radius: 4px;
     font-size: var(--font-size-sm);
     z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+    .weather-box {
+        display: none;
+    }
+    .scroll-arrows {
+        display: none;
+    }
+    .weather-map {
+        width: 90%;
+    }
+    .nav-arrow.right {
+        display: flex;
+    }
+    .nav-arrow.left {
+        display: flex;
+    }
+    .forecast-card:nth-child(7), .forecast-card:nth-child(6), .forecast-card:nth-child(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .map-container {
+        padding: 0;
+        height: auto;
+        margin: 8px 24px;
+    }
+    .date-overlay {
+        display: none;
+    }
+    .forecast-card:nth-child(4), .forecast-card:nth-child(3) {
+        display: none;
+    }
 }
 
 /* VYHLEDAVANI */
