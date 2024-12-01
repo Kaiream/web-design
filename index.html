@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="cs">
+<!-- Hlava stránky s meta tagy a odkazy na styly -->
 <head>
     <meta charset="UTF-8">
+    <!-- Nastavení viewportu pro správné zobrazení na mobilních zařízeních -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iZítra.cz - vítejte na úvodní stránce iZítra.cz, kde se dovíte zprávy ze světa a domova">
     <title>iZítra.cz</title>
     <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-
-    <!-- Header -->
+    <!-- Počáteční hlavička stránky -->
     <header class="header">
         <a href="index.html" class="brand">
             <img src="images/logo.png" alt="Logo iZítra.cz">
         </a>
 
-        <!-- Navigation -->
+        <!-- Navigace -->
         <nav class="nav">
             <ul class="nav-links">
                 <li><a href="domaci.html">Domácí</a></li>
@@ -25,47 +26,48 @@
                 <li><a href="kultura.html">Kultura</a></li>
                 <li><a href="pocasi.html">Počasí</a></li>
                 <li><a href="redakce.html">Redakce</a></li>
-                <li><a href="premium.html" class="premium no-highlight">Premium</a></li>
+                <li><a href="premium.html" class="premium no-glow">Premium</a></li>
             </ul>
         </nav>
 
-        <!-- Desktop Search -->
-        <div class="search-desktop">
+        <!-- Vyhledávání na webu (desktop) -->
+        <section class="search-desktop">
             <form action="vyhledavani.html" class="search-form">
                 <input type="text" placeholder="Vyhledávání..." class="search-input">
                 <button type="submit" class="search-submit">›</button>
             </form>
-        </div>
+        </section>
 
-        <!-- Mobile Search Toggle -->
-        <button class="search-toggle" aria-label="Search">
+        <!-- Ikona mobilního vyhledávání -->
+        <button class="search-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="6"></circle>
                 <line x1="15" y1="15" x2="22" y2="22"></line>
-              </svg>                                                      
+            </svg>                                                      
         </button>
 
         <!-- Burger menu -->
-        <button class="burger-menu" aria-label="Toggle menu">
+        <button class="burger-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </header>
 
-    <!-- Mobile Search -->
-    <div class="search-mobile">
+    <!-- Vyhledávání na webu (mobilní zařízení) -->
+    <section class="search-mobile">
         <form action="vyhledavani.html" class="search-form">
             <input type="text" placeholder="Vyhledávání..." class="search-input">
             <button type="submit" class="search-submit">›</button>
         </form>
-    </div>
+    </section>
 
     <hr class="lines-header"></hr>
 
+    <!-- Hlavní obsah stránky -->
     <div class="main-content">
         <main>
-            <!-- Featured article -->
+            <!-- Upoutávající článek -->
             <section class="featured-article">
                 <a href="clanek.html"><img src="https://picsum.photos/600/400" alt="Hlavní zpráva"></a>
                 <div class="featured-article-content">
@@ -75,13 +77,13 @@
                 </div>
             </section>
 
-            <!-- Horizontal list of articles -->
+            <!-- Horizontálně zarovnané články -->
             <section class="article-list-horizontal">
                 <article class="item">
                     <a href="clanek.html"><img src="https://picsum.photos/300/200?random=1" alt="Článek 1"></a>
                     <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
                     <p class="article-description">Lorem ipsum dolor sit amet, conconsectetur adipiscing elit. Fusce in nunc vel felis tempor aliquet.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
+                    <span class="date-author">Autor | 3. listopadu 2024</span>
                 </article>
                 <article class="item">
                     <a href="clanek.html"><img src="https://picsum.photos/300/200?random=2" alt="Článek 2"></a>
@@ -93,13 +95,13 @@
                     <a href="clanek.html"><img src="https://picsum.photos/300/200?random=3" alt="Článek 3"></a>
                     <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
                     <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
+                    <span class="date-author">Autor | 4. listopadu 2024</span>
                 </article>
                 <article class="item">
                     <a href="clanek.html"><img src="https://picsum.photos/300/200?random=4" alt="Článek 4"></a>
                     <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
                     <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
+                    <span class="date-author">Autor | 8. listopadu 2024</span>
                 </article>
                 <article class="item">
                     <a href="clanek.html"><img src="https://picsum.photos/300/200?random=5" alt="Článek 5"></a>
@@ -111,7 +113,7 @@
                     <a href="clanek.html"><img src="https://picsum.photos/300/200?random=6" alt="Článek 6"></a>
                     <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
                     <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
+                    <span class="date-author">Autor | 5. listopadu 2024</span>
                 </article>
             </section>
 
@@ -119,14 +121,14 @@
 
             <h2 class="other-articles">Další Zajímavé Články</h2>
 
-            <!-- Vertical list of articles -->
-            <section class="article-list-vertical">
+            <!-- Vertikálně zarovnané články -->
+            <aside class="article-list-vertical">
                 <article class="list-item">
                     <a href="clanek.html"><img src="https://picsum.photos/100/100?random=4" alt="Článek 1"></a>
                     <div class="list-content">
                         <span class="category">KULTURA</span>
                         <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">9. 11. 2024 | Autor</span>
+                        <span class="date-author">6. 11. 2024 | Autor</span>
                     </div>
                 </article>
                 <article class="list-item">
@@ -134,7 +136,7 @@
                     <div class="list-content">
                         <span class="category">ZAHRANIČNÍ</span>
                         <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">9. 11. 2024 | Autor</span>
+                        <span class="date-author">7. 11. 2024 | Autor</span>
                     </div>
                 </article>
                 <article class="list-item">
@@ -150,10 +152,10 @@
                     <div class="list-content">
                         <span class="category">POČASÍ</span>
                         <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">9. 11. 2024 | Autor</span>
+                        <span class="date-author">8. 11. 2024 | Autor</span>
                     </div>
                 </article>
-            </section>
+            </aside>
         </main>
     </div>
 
@@ -161,9 +163,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <section class="footer-content">
             <div class="footer-brand">
-                <img src="images/logo.png" alt="iZITRA.cz Logo" />
+                <a href="index.html"><img src="images/logo.png" alt="iZITRA.cz Logo" /></a>
                 <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
             <div class="footer-links">
@@ -174,25 +176,28 @@
                     <li><a href="sport.html">Sport</a></li>
                     <li><a href="kultura.html">Kultura</a></li>
                     <li><a href="pocasi.html">Počasí</a></li>
+                    <li><a href="redakce.html">Redakce</a></li>
                 </ul>
             </div>
-            <div class="footer-premium">
-                <h4>Premium</h4>
-                <p><a href="premium.html">Získejte přístup k exkluzivním funkcím</a></p>
-            </div>
+            <a href="premium.html" class="premium-button-footer">
+                <span class="premium-text-icon">★</span>
+                <span class="premium-text-footer">Získejte Premium</span>
+                <span class="premium-text-icon">★</span>
+            </a>
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/"><img src="images/icon-tiktok.png" alt="TikTok"></a>
                 </div>
             </div>
-        </div>
+        </section>
         <hr class="section-divider"/>
         <p class="copyright">
             &copy; 2024 iZítra.cz<br>
-            Ritter Radek, Boufala Karim, Martin Daňha, Michal Lukeš
+            Ritter Radek, Boufala Karim
         </p>
     </footer>
     <script src="main.js"></script>

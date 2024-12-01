@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Počáteční hlavička stránky -->
     <header class="header">
         <a href="index.html" class="brand">
             <img src="images/logo.png" alt="Logo iZítra.cz">
         </a>
 
-        <!-- Navigation -->
+        <!-- Navigace -->
         <nav class="nav">
             <ul class="nav-links">
                 <li><a href="domaci.html">Domácí</a></li>
@@ -26,41 +26,41 @@
                 <li><a href="kultura.html">Kultura</a></li>
                 <li><a href="pocasi.html">Počasí</a></li>
                 <li><a href="redakce.html">Redakce</a></li>
-                <li><a href="premium.html" class="premium no-highlight">Premium</a></li>
+                <li><a href="premium.html" class="premium no-glow">Premium</a></li>
             </ul>
         </nav>
 
-        <!-- Desktop Search -->
-        <div class="search-desktop">
+        <!-- Vyhledávání na webu (desktop) -->
+        <section class="search-desktop">
             <form action="vyhledavani.html" class="search-form">
                 <input type="text" placeholder="Vyhledávání..." class="search-input">
                 <button type="submit" class="search-submit">›</button>
             </form>
-        </div>
+        </section>
 
-        <!-- Mobile Search Toggle -->
-        <button class="search-toggle" aria-label="Search">
+        <!-- Ikona mobilního vyhledávání -->
+        <button class="search-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="6"></circle>
                 <line x1="15" y1="15" x2="22" y2="22"></line>
-              </svg>                                                      
+            </svg>                                                      
         </button>
 
         <!-- Burger menu -->
-        <button class="burger-menu" aria-label="Toggle menu">
+        <button class="burger-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </header>
 
-    <!-- Mobile Search -->
-    <div class="search-mobile">
+    <!-- Vyhledávání na webu (mobilní zařízení) -->
+    <section class="search-mobile">
         <form action="vyhledavani.html" class="search-form">
             <input type="text" placeholder="Vyhledávání..." class="search-input">
             <button type="submit" class="search-submit">›</button>
         </form>
-    </div>
+    </section>
 
     <hr class="lines-header"></hr>
 
@@ -84,8 +84,9 @@
 
             <!-- Kontaktní informace a sociální sítě -->
             <section class="contact-block">
-                <div class="contact-left">
+                <article class="contact-left">
                     <div class="contact-choice">
+                        <!-- Použití AI pro snadné vytvoření SVG ikon -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"> 
                             <title>Telefon</title>
                             <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19"/>
@@ -100,21 +101,13 @@
                         <a href="mailto:redakce@izitra.cz">redakce@izitra.cz</a>
                     </div>
                     <div class="social-icons">
-
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/" class="social-icon instagram"><img src="images/icon-instagram.svg" alt=""></a>
-
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/" class="social-icon facebook"><img src="images/icon-facebook.svg" alt=""></a>
-
-                        <!-- TikTok -->
-                        <a href="https://www.tiktok.com/" class="social-icon tiktok"><img src="images/icon-tiktok.svg" alt=""></a>
-
-                        <!-- Twitter/X -->
-                        <a href="https://x.com/" class="social-icon twitter"><img src="images/icon-twitter.svg" alt=""></a>
+                        <a href="https://www.instagram.com/" class="social-icon"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/" class="social-icon"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                        <a href="https://www.tiktok.com/" class="social-icon"><img src="images/icon-tiktok.png" alt="TikTok"></a>
+                        <a href="https://x.com/" class="social-icon"><img src="images/icon-twitter.png" alt="Twitter"></a>
                     </div>
-                </div>
-                <div class="contact-right">
+                </article>
+                <article class="contact-right">
                     <h3>Redakce iZítra.cz</h3>
                     <p>Bistro s.r.o. (areál Spitfire Studio)</p>
                     <p>Roztržpytlického 969/42</p>
@@ -123,7 +116,7 @@
                     <p class="subsidiary-info">
                         Bistro s.r.o. je dceřinou společností Ultima Enterprises B.M.W., 
                         člen mezinárodní demokratické skupiny Elona Muska.</p>
-                </div>
+                </article>
             </section>
 
             <!-- Vedení redakce - zobrazení důležitých členů týmu -->
@@ -261,9 +254,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <section class="footer-content">
             <div class="footer-brand">
-                <img src="images/logo.png" alt="iZITRA.cz Logo" />
+                <a href="index.html"><img src="images/logo.png" alt="iZITRA.cz Logo" /></a>
                 <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
             <div class="footer-links">
@@ -274,25 +267,28 @@
                     <li><a href="sport.html">Sport</a></li>
                     <li><a href="kultura.html">Kultura</a></li>
                     <li><a href="pocasi.html">Počasí</a></li>
+                    <li><a href="redakce.html">Redakce</a></li>
                 </ul>
             </div>
-            <div class="footer-premium">
-                <h4>Premium</h4>
-                <p><a href="premium.html">Získejte přístup k exkluzivním funkcím</a></p>
-            </div>
+            <a href="premium.html" class="premium-button-footer">
+                <span class="premium-text-icon">★</span>
+                <span class="premium-text-footer">Získejte Premium</span>
+                <span class="premium-text-icon">★</span>
+            </a>
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/"><img src="images/icon-tiktok.png" alt="TikTok"></a>
                 </div>
             </div>
-        </div>
+        </section>
         <hr class="section-divider"/>
         <p class="copyright">
             &copy; 2024 iZítra.cz<br>
-            Ritter Radek, Boufala Karim, Martin Daňha, Michal Lukeš
+            Ritter Radek, Boufala Karim
         </p>
     </footer>
     <script src="main.js"></script>

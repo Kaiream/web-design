@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs">
-<!-- Hlavička stránky s meta tagy a odkazy na styly -->
+<!-- Hlava stránky s meta tagy a odkazy na styly -->
 <head>
     <meta charset="UTF-8">
     <!-- Nastavení viewportu pro správné zobrazení na mobilních zařízeních -->
@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Počáteční hlavička stránky -->
     <header class="header">
         <a href="index.html" class="brand">
             <img src="images/logo.png" alt="Logo iZítra.cz">
         </a>
 
-        <!-- Navigation -->
+        <!-- Navigace -->
         <nav class="nav">
             <ul class="nav-links">
                 <li><a href="domaci.html">Domácí</a></li>
@@ -26,41 +26,41 @@
                 <li><a href="kultura.html">Kultura</a></li>
                 <li><a href="pocasi.html">Počasí</a></li>
                 <li><a href="redakce.html">Redakce</a></li>
-                <li><a href="premium.html" class="premium no-highlight">Premium</a></li>
+                <li><a href="premium.html" class="premium no-glow">Premium</a></li>
             </ul>
         </nav>
 
-        <!-- Desktop Search -->
-        <div class="search-desktop">
+        <!-- Vyhledávání na webu (desktop) -->
+        <section class="search-desktop">
             <form action="vyhledavani.html" class="search-form">
                 <input type="text" placeholder="Vyhledávání..." class="search-input">
                 <button type="submit" class="search-submit">›</button>
             </form>
-        </div>
+        </section>
 
-        <!-- Mobile Search Toggle -->
-        <button class="search-toggle" aria-label="Search">
+        <!-- Ikona mobilního vyhledávání -->
+        <button class="search-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="6"></circle>
                 <line x1="15" y1="15" x2="22" y2="22"></line>
-              </svg>                                                      
+            </svg>                                                      
         </button>
 
         <!-- Burger menu -->
-        <button class="burger-menu" aria-label="Toggle menu">
+        <button class="burger-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </header>
 
-    <!-- Mobile Search -->
-    <div class="search-mobile">
+    <!-- Vyhledávání na webu (mobilní zařízení) -->
+    <section class="search-mobile">
         <form action="vyhledavani.html" class="search-form">
             <input type="text" placeholder="Vyhledávání..." class="search-input">
             <button type="submit" class="search-submit">›</button>
         </form>
-    </div>
+    </section>
 
     <hr class="lines-header"></hr>
 
@@ -141,7 +141,7 @@
             </article>
         </section>
 
-        <!-- Impregnation -->
+        <!-- Stránkování -->
         <div class="pagination">
             <button style="background-color: #333333">1</button>
             <button>2</button>
@@ -155,9 +155,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <section class="footer-content">
             <div class="footer-brand">
-                <img src="images/logo.png" alt="iZITRA.cz Logo" />
+                <a href="index.html"><img src="images/logo.png" alt="iZITRA.cz Logo" /></a>
                 <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
             <div class="footer-links">
@@ -168,25 +168,28 @@
                     <li><a href="sport.html">Sport</a></li>
                     <li><a href="kultura.html">Kultura</a></li>
                     <li><a href="pocasi.html">Počasí</a></li>
+                    <li><a href="redakce.html">Redakce</a></li>
                 </ul>
             </div>
-            <div class="footer-premium">
-                <h4>Premium</h4>
-                <p><a href="premium.html">Získejte přístup k exkluzivním funkcím</a></p>
-            </div>
+            <a href="premium.html" class="premium-button-footer">
+                <span class="premium-text-icon">★</span>
+                <span class="premium-text-footer">Získejte Premium</span>
+                <span class="premium-text-icon">★</span>
+            </a>
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/"><img src="images/icon-tiktok.png" alt="TikTok"></a>
                 </div>
             </div>
-        </div>
+        </section>
         <hr class="section-divider"/>
         <p class="copyright">
             &copy; 2024 iZítra.cz<br>
-            Ritter Radek, Boufala Karim, Martin Daňha, Michal Lukeš
+            Ritter Radek, Boufala Karim
         </p>
     </footer>
     <script src="main.js"></script>

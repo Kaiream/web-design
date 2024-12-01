@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="cs">
+<!-- Hlavička stránky s meta tagy a odkazy na styly -->
 <head>
     <meta charset="UTF-8">
+    <!-- Nastavení viewportu pro správné zobrazení na mobilních zařízeních -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Domácí zprávy na iZítra.cz">
     <title>Čerstvé domácí zprávičky | iZítra.cz</title>
     <link rel="icon" href="images/cool.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Počáteční hlavička stránky -->
     <header class="header">
         <a href="index.html" class="brand">
             <img src="images/logo.png" alt="Logo iZítra.cz">
         </a>
 
-        <!-- Navigation -->
+        <!-- Navigace -->
         <nav class="nav">
             <ul class="nav-links">
                 <li><a href="domaci.html">Domácí</a></li>
@@ -23,46 +26,46 @@
                 <li><a href="kultura.html">Kultura</a></li>
                 <li><a href="pocasi.html">Počasí</a></li>
                 <li><a href="redakce.html">Redakce</a></li>
-                <li><a href="premium.html" class="premium no-highlight">Premium</a></li>
+                <li><a href="premium.html" class="premium no-glow">Premium</a></li>
             </ul>
         </nav>
 
-        <!-- Desktop Search -->
-        <div class="search-desktop">
+        <!-- Vyhledávání na webu (desktop) -->
+        <section class="search-desktop">
             <form action="vyhledavani.html" class="search-form">
                 <input type="text" placeholder="Vyhledávání..." class="search-input">
                 <button type="submit" class="search-submit">›</button>
             </form>
-        </div>
+        </section>
 
-        <!-- Mobile Search Toggle -->
-        <button class="search-toggle" aria-label="Search">
+        <!-- Ikona mobilního vyhledávání -->
+        <button class="search-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="6"></circle>
                 <line x1="15" y1="15" x2="22" y2="22"></line>
-              </svg>                                                      
+            </svg>                                                      
         </button>
 
         <!-- Burger menu -->
-        <button class="burger-menu" aria-label="Toggle menu">
+        <button class="burger-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </header>
 
-    <!-- Mobile Search -->
-    <div class="search-mobile">
+    <!-- Vyhledávání na webu (mobilní zařízení) -->
+    <section class="search-mobile">
         <form action="vyhledavani.html" class="search-form">
             <input type="text" placeholder="Vyhledávání..." class="search-input">
             <button type="submit" class="search-submit">›</button>
         </form>
-    </div>
+    </section>
 
     <hr class="lines-header"></hr>
 
-    <!-- Main content -->
-    <div class="main-content">
+    <!-- Hlavní obsah stránky s ukázkou článků -->
+    <main class="main-content">
 
         <!-- Breadcrumb navigation -->
         <nav class="breadcrumb">
@@ -73,96 +76,96 @@
 
         <h1 class="section-title">Domácí zprávy</h1>       
         <section class="article-list-vertical">
-            <!-- Article 1 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=21" alt="Domácí článek 1">
+            <!-- Článek 1 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=21" alt="Domácí článek 1"></a>
                 <div class="list-content">
                     <span class="category">POLITIKA</span>
                     <h3><a href="clanek.html" class="article-link">Trump aneb co na to Češi?</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, eros nec auctor tincidunt, sapien elit suscipit lectus.</p>
                     <span class="date-author">16. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 2 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=22" alt="Domácí článek 2">
+            </article>
+            <!-- Článek 2 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=22" alt="Domácí článek 2"></a>
                 <div class="list-content">
                     <span class="category">EKONOMIKA</span>
                     <h3><a href="clanek.html" class="article-link">Makroekonomie se ruší, s novou Omniekonomií si ekonomové mažou chléb Nutellou</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Integer vel elit sit amet risus ullamcorper luctus.</p>
                     <span class="date-author">16. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 3 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=23" alt="Domácí článek 3">
+            </article>
+            <!-- Článek 3 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=23" alt="Domácí článek 3"></a>
                 <div class="list-content">
                     <span class="category">FINANCE</span>
                     <h3><a href="clanek.html" class="article-link">Letošní inflace: jak to vypadá s inflací - infalce</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas est.</p>
                     <span class="date-author">15. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 4 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=24" alt="Domácí článek 4">
+            </article>
+            <!-- Článek 4 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=24" alt="Domácí článek 4"></a>
                 <div class="list-content">
                     <span class="category">POLITIKA</span>
                     <h3><a href="clanek.html" class="article-link">Petr Pavel upadl a škrábl se na čele. Jak následuje prognóza?</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dapibus, turpis ac placerat faucibus, magna urna vehicula ligula.</p>
                     <span class="date-author">14. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 5 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=25" alt="Domácí článek 5">
+            </article>
+            <!-- Článek 5 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=25" alt="Domácí článek 5"></a>
                 <div class="list-content">
                     <span class="category">TECHNOLOGIE</span>
                     <h3><a href="clanek.html" class="article-link">Český titan Spidla.cz uvedl na trh novou technologii zvanou Mobilní Telefon. Oběv století?</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit mauris id ligula tincidunt aliquam.</p>
                     <span class="date-author">14. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 6 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=26" alt="Domácí článek 6">
+            </article>
+            <!-- Článek 6 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=26" alt="Domácí článek 6"></a>
                 <div class="list-content">
                     <span class="category">AKADEMIE</span>
                     <h3><a href="clanek.html" class="article-link">Z ČZU vykopli pana děkana doc. RNDR. Bc. Ing. PhDr. DiS. MGA. et. Mgr. prof. Tomáše Šubrta, Ph.D. MUDr. JUDr. DSc. CSc. as. odb. fakulty PEF</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius eros in elit dignissim, sed malesuada erat accumsan.</p>
                     <span class="date-author">13. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 7 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=27" alt="Domácí článek 7">
+            </article>
+            <!-- Článek 7 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=27" alt="Domácí článek 7"></a>
                 <div class="list-content">
                     <span class="category">FINANCE</span>
                     <h3><a href="clanek.html" class="article-link">Banka ti dá extra prachy, pokud jim dáš extra extra prachy. Jak toho využít abys nebyl broke? KLIKNI IHNED!</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed risus a tortor suscipit vehicula nec et sapien.</p>
                     <span class="date-author">13. listopadu 2024 | Autor</span>
                 </div>
-            </div>
-            <!-- Article 8 -->
-            <div class="list-item">
-                <img src="https://picsum.photos/100/100?random=28" alt="Domácí článek 8">
+            </article>
+            <!-- Článek 8 -->
+            <article class="list-item">
+                <a href="clanek.html"><img src="https://picsum.photos/100/100?random=28" alt="Domácí článek 8"></a>
                 <div class="list-content">
                     <span class="category">STRUKTURALISTIKA</span>
                     <h3><a href="clanek.html" class="article-link">Výbor z prací Českého strukturalismu tj. proč je Pražský hrad špatně navržen (za 15 let na něj spadne meteorit a nevydrží :L)</a></h3>
                     <p class="small-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque arcu ac arcu vehicula, non fringilla eros volutpat.</p>
                     <span class="date-author">12. listopadu 2024 | Autor</span>
                 </div>
-            </div>
+            </article>
         </section>
-    </div>
+    </main>
 
     <hr class="footer-line" />
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <section class="footer-content">
             <div class="footer-brand">
-                <img src="images/logo.png" alt="iZITRA.cz Logo" />
+                <a href="index.html"><img src="images/logo.png" alt="iZITRA.cz Logo" /></a>
                 <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
             <div class="footer-links">
@@ -173,25 +176,28 @@
                     <li><a href="sport.html">Sport</a></li>
                     <li><a href="kultura.html">Kultura</a></li>
                     <li><a href="pocasi.html">Počasí</a></li>
+                    <li><a href="redakce.html">Redakce</a></li>
                 </ul>
             </div>
-            <div class="footer-premium">
-                <h4>Premium</h4>
-                <p><a href="premium.html">Získejte přístup k exkluzivním funkcím</a></p>
-            </div>
+            <a href="premium.html" class="premium-button-footer">
+                <span class="premium-text-icon">★</span>
+                <span class="premium-text-footer">Získejte Premium</span>
+                <span class="premium-text-icon">★</span>
+            </a>
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
                 <div class="social-icons">
-                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="images/icon-twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/"><img src="images/icon-tiktok.png" alt="TikTok"></a>
                 </div>
             </div>
-        </div>
+        </section>
         <hr class="section-divider"/>
         <p class="copyright">
             &copy; 2024 iZítra.cz<br>
-            Ritter Radek, Boufala Karim, Martin Daňha, Michal Lukeš
+            Ritter Radek, Boufala Karim
         </p>
     </footer>
     <script src="main.js"></script>
