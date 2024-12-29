@@ -20,39 +20,42 @@ searchToggle.addEventListener('click', () => {
     headerLine.classList.toggle('shifted-search');
 });
 
-// ---------- Komentáře ----------
-const commentForm = document.querySelector('.comment-form');
-const commentsList = document.querySelector('.comments-list');
+// ---------- Následuje pop-up objednání předplatného. Jedná se o zábavnou funkci, která může být ignorována ----------
+let hasShownSubscription = false;
 
-// Přidání event listeneru na odeslání formuláře - spustí se pouze pokud existují oba elementy
-if (commentForm && commentsList) {
-    commentForm.addEventListener('submit', (e) => {
-        e.preventDefault(); // Zabrání výchozímu chování formuláře (přesměrování stránky)
-        
-        // Získání vstupního pole a jeho hodnoty (text komentáře)
-        const commentInput = commentForm.querySelector('.comment-input');
-        const commentText = commentInput.value.trim(); // Odstranění mezer na začátku a konci
-        
-        // Pokud není komentář prázdný, vytvoří nový HTML element a vloží ho na začátek seznamu komentářů
-        if (commentText) {
-            const newComment = `
-                <article class="comment">
-                    <div class="comment-avatar">
-                        <img src="https://picsum.photos/50/50?random=${Math.random()}" alt="User avatar">
-                    </div>
-                    <div class="comment-body">
-                        <div class="comment-header">
-                            <h3>Anonymous</h3>
-                            <span class="comment-date">Právě teď</span>
-                        </div>
-                        <p>${commentText}</p>
-                    </div>
-                </article>
-            `;
-            
-            // Vložení nového komentáře na začátek seznamu
-            commentsList.insertAdjacentHTML('afterbegin', newComment);
-            commentInput.value = ''; // Vyčištění vstupního pole
-        }
+// Listener even, který sleduje scroll na stránce a zobrazí pop-up předplatného, pokud uživatel dosáhne 80% stránky
+window.addEventListener('scroll', () => { 
+    // Deklarace proměnných pro výpočet procentuálního scrollu
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight; // Výška okna prohlížeče
+    const scrollPercent = (scrollTop / (docHeight - windowHeight)) * 100; // Výpočet procentuálního scrollu, 
+    // vzorec vypočítá procento posouvání vydělením aktuální pozice posouvání (scrollTop)
+    // rozdílem mezi výškou dokumentu a výškou okna (docHeight - windowHeight)
+
+    // Pokud uživatel dosáhne 80% stránky a pop-up ještě nebyl zobrazen, tak zobrazí popup
+    if (scrollPercent >= 80 && !hasShownSubscription) {
+        const subscriptionContainer = document.querySelector('.subscription-container');
+        subscriptionContainer.style.display = 'block'; 
+        hasShownSubscription = true;
+    }
+});
+
+// Podobné zobrazení popupu při stiknutí tlačítek premium
+const premiumButtons = document.querySelectorAll('.premium, .premium-button-footer'); // Tlačítko v navigaci a v patičce
+premiumButtons.forEach(button => { // Přidání event listeneru na každé tlačítko
+    button.addEventListener('click', (event) => { // Při kliknutí na tlačítko zobrazí popup
+        event.preventDefault();
+        showSubscriptionPopup();
     });
+});
+
+function showSubscriptionPopup() { // Funkce pro zobrazení popupu (stejná jako v ifu nahoře)
+    const subscriptionContainer = document.querySelector('.subscription-container');
+    subscriptionContainer.style.display = 'block';
+    hasShownSubscription = true;
 }
+
+document.querySelector('.close-button').addEventListener('click', () => { // Přidání event listeneru na tlačítko zavření
+    document.querySelector('.subscription-container').style.display = 'none'; // Při kliknutí na tlačítko zavře popup
+});

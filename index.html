@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="cs">
 <!-- Hlava stránky s meta tagy a odkazy na styly -->
-<head>
+<head role="banner">
     <meta charset="UTF-8">
     <!-- Nastavení viewportu pro správné zobrazení na mobilních zařízeních -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="iZítra.cz - vítejte na úvodní stránce iZítra.cz, kde se dovíte zprávy ze světa a domova">
+    <meta name="description" content="iZítra.cz - vítejte na úvodní stránce iZítra.cz, kde se dovíte zprávy ze světa a domova" aria-label="Popis stránky">
     <title>iZítra.cz</title>
-    <link rel="icon" href="images/cool.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/cool.png" type="image/png" aria-label="Ikona webu">
+    <link rel="stylesheet" href="style.css" aria-label="Hlavní styly">
 </head>
 <body>
     <!-- Počáteční hlavička stránky -->
-    <header class="header">
-        <a href="index.html" class="brand">
-            <img src="images/logo.png" alt="Logo iZítra.cz">
+    <header class="header" role="banner">
+        <a href="index.html" class="brand" title="Kliknutím přejdete na domovskou stránku" aria-label="Domovská stránka">
+            <img src="images/logo.png" alt="Logo iZítra.cz" aria-label="Logo webu"/>
         </a>
 
         <!-- Navigace -->
-        <nav class="nav">
-            <ul class="nav-links">
-                <li><a href="domaci.html">Domácí</a></li>
-                <li><a href="zahranicni.html">Zahraniční</a></li>
-                <li><a href="sport.html">Sport</a></li>
-                <li><a href="kultura.html">Kultura</a></li>
-                <li><a href="pocasi.html">Počasí</a></li>
-                <li><a href="redakce.html">Redakce</a></li>
-                <li><a href="premium.html" class="premium no-glow">Premium</a></li>
+        <nav class="nav" role="navigation" aria-label="Hlavní navigace">
+            <ul class="nav-links" role="navigation">
+                <li><a href="#" aria-label="Sekce domácích zpráv">Domácí</a></li>
+                <li><a href="#" aria-label="Sekce zahraničních zpráv">Zahraniční</a></li>
+                <li><a href="#" aria-label="Sportovní sekce">Sport</a></li>
+                <li><a href="#" aria-label="Kulturní sekce">Kultura</a></li>
+                <li><a href="#" aria-label="Předpověď počasí">Počasí</a></li>
+                <li><a href="#" aria-label="O redakci">Redakce</a></li>
+                <li><a href="#" class="premium no-glow" aria-label="Získat prémiové členství" >Premium</a></li>
             </ul>
         </nav>
 
         <!-- Vyhledávání na webu (desktop) -->
-        <section class="search-desktop">
-            <form action="vyhledavani.html" class="search-form">
-                <input type="text" placeholder="Vyhledávání..." class="search-input">
-                <button type="submit" class="search-submit">›</button>
+        <section class="search-desktop" role="search">
+            <form action="#" class="search-form">
+                <input type="text" placeholder="Vyhledávání..." class="search-input" aria-label="Vyhledávací pole">
+                <button type="submit" class="search-submit" aria-label="Hledat">›</button>
             </form>
         </section>
 
         <!-- Ikona mobilního vyhledávání -->
-        <button class="search-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button class="search-toggle" role="button" aria-label="Otevřít vyhledávání">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="icon">
                 <circle cx="10" cy="10" r="6"></circle>
                 <line x1="15" y1="15" x2="22" y2="22"></line>
             </svg>                                                      
         </button>
 
         <!-- Burger menu -->
-        <button class="burger-menu">
+        <button class="burger-menu" role="button" aria-label="Otevřít hlavní menu">
             <span></span>
             <span></span>
             <span></span>
@@ -55,148 +55,440 @@
     </header>
 
     <!-- Vyhledávání na webu (mobilní zařízení) -->
-    <section class="search-mobile">
-        <form action="vyhledavani.html" class="search-form">
-            <input type="text" placeholder="Vyhledávání..." class="search-input">
-            <button type="submit" class="search-submit">›</button>
+    <section class="search-mobile" role="search">
+        <form action="#" class="search-form">
+            <input type="text" placeholder="Vyhledávání..." class="search-input" aria-label="Vyhledávací pole pro mobilní zařízení">
+            <button type="submit" class="search-submit" aria-label="Hledat">›</button>
         </form>
     </section>
 
-    <hr class="lines-header"></hr>
+    <hr class="lines-header" role="separator" aria-label="Oddělovač sekce"></hr>
 
     <!-- Hlavní obsah stránky -->
-    <div class="main-content">
-        <main>
-            <!-- Upoutávající článek -->
-            <section class="featured-article">
-                <a href="clanek.html"><img src="https://picsum.photos/600/400" alt="Hlavní zpráva"></a>
-                <div class="featured-article-content">
-                    <h1><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h1>
-                    <p class="featured-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra purus et arcu convallis, non lacinia libero venenatis.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
+    <main class="main-content" role="main">
+
+        <!-- Upoutávající článek -->
+        <article class="featured-article" role="article">
+            <figure role="group" aria-label="Obrázek k hlavnímu článku">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít celý článek">
+                    <img src="https://picsum.photos/600/400" alt="Ilustrační obrázek k hlavnímu článku"/>
+                </a>
+                <figcaption>
+                    <span class="hot-news-badge" title="Žhavý článek" role="icon" aria-label="Označení žhavého článku">🔥</span>
+                </figcaption>
+            </figure>
+
+            <section class="featured-article-content" role="contentinfo">
+                <!-- Nadpis článku-->
+                <h1>
+                    <a href="#" class="article-link" aria-label="Přečíst článek o nové technologii">
+                        Nová technologie mění svět: Revoluce v energetice
+                    </a>
+                </h1>
+
+                <!-- Popis článku -->
+                <p class="featured-article-description" role="text">
+                    Vědci představili převratnou technologii,
+                    která slibuje revoluci v oblasti obnovitelných zdrojů energie.
+                    Tato inovace by mohla výrazně snížit závislost na fosilních palivech
+                    a přinést čistší budoucnost. Na co se můžeme těšit je...
+                <a href="#" class="read-more" aria-label="Přečíst celý článek o nové technologii">Číst dále</a>
+                </p>
+
+                <!-- Datum a autor článku -->
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Clarque Turntable | 9. listopadu 2024
+                </span>
+
+                <!-- Konrejner statistik -->
+                <aside class="featured-stats" role="complementary" aria-label="Statistiky článku">
+                    <div class="stat-item" title="Počet zobrazení" role="status" aria-label="Počet zobrazení článku">
+                        <!-- SVG ikona pro počet zobrazení -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" role="icon">
+                            <path d=
+                            "
+                            M12 5
+                            C7 5 2.73 8.11 1 12
+                            c1.73 3.89 6 7 11 7
+                            s9.27-3.11 11-7
+                            c-1.73-3.89-6-7-11-7
+                            z
+                            m0 11
+                            a4 4 0 1 1 0-8 4 4 0 0 1 0 8
+                            z
+                            "/>
+                        </svg>
+                        <p aria-label="2300 zobrazení">2.3k</p>
+                    </div>
+                    <div class="stat-item" title="Počet komentářů" role="status" aria-label="Počet komentářů článku">
+                        <!-- SVG ikona pro komentáře -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" role="icon">
+                            <path d=
+                            "
+                            M21 15
+                            a2 2 0 0 1-2 2
+                            H7
+                            l-4 4
+                            V5
+                            a2 2 0 0 1 2-2
+                            h14
+                            a2 2 0 0 1 2 2
+                            z
+                            "/>
+                        </svg>
+                        <p aria-label="45 komentářů">45</p>
+                    </div>
+                </aside>
+            </section>
+        </article>
+
+        <!-- Horizontálně zarovnané články -->
+        <section class="article-list-horizontal" role="region" aria-label="Seznam horizontálních článků">
+            <!-- Článek 1 -->
+            <article class="item" role="article" aria-labelledby="article-1-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o dopravním značení">
+                    <img src="https://picsum.photos/300/200?random=1" alt="Ilustrační obrázek dopravního značení"/>
+                </a>
+                <h2 id="article-1-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o dopravním značení">
+                        Nový systém dopravního značení v Praze a Pardubicích
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Nové značení má za cíl zlepšit plynulost dopravy a zvýšit bezpečnost na silnicích.
+                    Tato bakalářská práce se mimo jiné zabývá...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    George Gruee | 3. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 2 -->
+            <article class="item" role="article" aria-labelledby="article-2-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o neviditelným umění">
+                    <img src="https://picsum.photos/300/200?random=2" alt="Ilustrační obrázek umění"/>
+                </a>
+                <h2 id="article-2-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o neviditelným umění">
+                        Moderní umění: Prázdný rám vydražen za miliony, byl neviditelný
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Dílo, které neexistuje, bylo na aukci rozaukciováno za rekordní sumu. Umělec tvrdí, že...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Reggi Oolong | 9. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 3 -->
+            <article class="item" role="article" aria-labelledby="article-3-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o armádním noži">
+                    <img src="https://picsum.photos/300/200?random=3" alt="Ilustrační obrázek armádního nože"/>
+                </a>
+                <h2 id="article-3-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o armádním noži">
+                        Armádní nůž nyní obsahuje i USB-C port
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Žhavě famózní armádní nůž je vybaven nejen nožem (wow),
+                    ale také moderním USB-C portem pro nabíjení zařízení! Crazy ahh innit,
+                    výrobce slibuje, že tato inovace bude mít i...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Samuel Regen di Amòre | 4. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 4 -->
+            <article class="item" aria-labelledby="article-4-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o falešném medvědovi">
+                    <img src="https://picsum.photos/300/200?random=4" alt="Ilustrační obrázek medvěda"/>
+                </a>
+                <h2 id="article-4-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o falešném medvědovi">
+                        Auto nám zničil medvěd, řekli pojišťovně. Byl to člověk v kostýmu
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Pojišťovna se sesypala. Incident vyvolal v Číně vzpouru lidstva,
+                    na místě jsou naši reportéřti.. ups.. už nejsou... rip..
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Milan Fatson | 8. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 5 -->
+            <article class="item" aria-labelledby="article-5-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o inflaci">
+                    <img src="https://picsum.photos/300/200?random=5" alt="Ilustrační obrázek inflace"/>
+                </a>
+                <h2 id="article-5-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o inflaci">
+                        Letošní inflace: jak to vypadá s inflací - infalce
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Inflace je na inflační křivce znázorněná inflací, která inflaci inflacuje.
+                    Inflace inflačně influencuje inflační inflaci inflační inflačnosti. Inflace...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Qerqliqtraqwar Bwvukwuvmbwe | 9. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 6 -->
+            <article class="item" aria-labelledby="article-6-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o politické zácpě">
+                    <img src="https://picsum.photos/300/200?random=6" alt="Ilustrační obrázek politické zácpy"/>
+                </a>
+                <h2 id="article-6-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o politické zácpě">
+                        Politik slíbil zázraky, ale přinesl jen zácpy
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Politický lídr sliboval revoluci v dopravní situaci na toaletách,
+                    ale místo toho způsobil největší zácpy v historii lidstva.
+                    Dobyvatelé toalet mají před...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Tristan Tuwalu | 5. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 7 -->
+            <article class="item" aria-labelledby="article-7-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o singularitě">
+                    <img src="https://picsum.photos/300/200?random=7" alt="Ilustrační obrázek singularity"/>
+                </a>
+                <h2 id="article-7-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o singularitě">
+                        Ruští horníci se dokopali k singularitě
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Oběv singularity způsobil zánik solárního systému, ale to je jen maličkost,
+                    protože horníci nyní mohou těžit nejen uhlí, ale i paralelní vesmíry. Rusko se hodlá...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Piyotr Wuyakizop | 6. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 8 -->
+            <article class="item" aria-labelledby="article-8-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o spánkovém učení">
+                    <img src="https://picsum.photos/300/200?random=8" alt="Ilustrační obrázek spánkového učení"/>
+                </a>
+                <h2 id="article-8-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o spánkovém učení">
+                        Studenti objevili nový způsob, jak se učit ve spánku
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Studenti objevili revoluční metodu učení ve spánku.
+                    Podle jejich výzkumu stačí poslouchat přednášky během spánku
+                    a probudí se s novými znalostmi. Výsledky jsou natolik ohromující, že...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Thomas Times | 4. listopadu 2024
+                </span>
+            </article>
+            <!-- Článek 9 -->
+            <article class="item" aria-labelledby="article-9-title">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o Unobtainium">
+                    <img src="https://picsum.photos/300/200?random=9" alt="Ilustrační obrázek Unobtainiuma"/>
+                </a>
+                <h2 id="article-9-title">
+                    <a href="#" class="article-link" aria-label="Přečíst článek o Unobtainium">
+                        Vědci objevili nový prvek: Unobtainium, který nelze získat
+                    </a>
+                </h2>
+                <p class="article-description" role="text">
+                    Vědci z celého světa jsou nadšeni objevem nového prvku,
+                    který je naprosto nedosažitelný. Dochází mi kreativita...
+                    <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
+                </p>
+                <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
+                    Claudio Erquel | 3. listopadu 2024
+                </span>
+            </article>
+        </section>
+
+        <hr class="section-divider" role="separator" aria-label="Oddělovač sekcí s články">
+
+        <h2 class="other-articles" role="heading">Další Zajímavé Články</h2>
+
+        <!-- Vertikálně zarovnané články -->
+        <aside class="article-list-vertical" role="complementary" aria-label="Seznam souvisejících článků">
+            <!-- Vertikální článek 1 -->
+            <article class="list-item" role="article" aria-labelledby="vertical-article-1">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o prezidentu Pavlovi">
+                    <img src="https://picsum.photos/100/100?random=4" alt="Ilustrační obrázek prezidenta Pavla"/>
+                </a>
+                <div class="list-content" role="contentinfo">
+                    <span class="category" role="doc-subtitle" aria-label="Kategorie článku">POLITIKA</span>
+                    <h3 id="vertical-article-1">
+                        <a href="#" class="article-link" aria-label="Přečíst článek o prezidentu Pavlovi">
+                            Prezident Petr Pavel upadl a škrábl se na čele. Jak následuje prognóza?
+                        </a>
+                    </h3>
+                    <span class="date-author" role="contentinfo" aria-label="Datum a autor">6. 11. 2024 | Samil Ider</span>
                 </div>
-            </section>
+            </article>
+            <!-- Vertikální článek 2 -->
+            <article class="list-item" role="article" aria-labelledby="vertical-article-2">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o extra peněz z banky">
+                    <img src="https://picsum.photos/100/100?random=5" alt="Ilustrační obrázek banky"/>
+                </a>
+                <div class="list-content" role="contentinfo">
+                    <span class="category" role="doc-subtitle" aria-label="Kategorie článku">FINANCE</span>
+                    <h3 id="vertical-article-2">
+                        <a href="#" class="article-link" aria-label="Přečíst článek o extra peněz z banky"></a>
+                            Banka ti dá extra prachy, pokud jim dáš extra extra prachy.
+                            Jak toho využít abys nebyl broke? KLIKNI IHNED!
+                        </a>
+                    </h3>
+                    <span class="date-author" role="contentinfo" aria-label="Datum a autor">7. 11. 2024 | Filip Segiun</span>
+                </div>
+            </article>
+            <!-- Vertikální článek 3 -->
+            <article class="list-item" role="article" aria-labelledby="vertical-article-3">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o omniekonomii">
+                    <img src="https://picsum.photos/100/100?random=6" alt="Ilustrační obrázek omniekonomie a Nutelly"/>
+                </a>
+                <div class="list-content" role="contentinfo">
+                    <span class="category" role="doc-subtitle" aria-label="Kategorie článku">EKONOMIKA</span>
+                    <h3 id="vertical-article-3">
+                        <a href="#" class="article-link" aria-label="Přečíst článek o omniekonomii">
+                            Makroekonomie se ruší, s novou Omniekonomií si ekonomové mažou chléb Nutellou
+                        </a>
+                    </h3>
+                    <span class="date-author" role="contentinfo" aria-label="Datum a autor">9. 11. 2024 | Yirka Oškli</span>
+                </div>
+            </article>
+            <!-- Vertikální článek 4 -->
+            <article class="list-item" role="article" aria-labelledby="vertical-article-4">
+                <a href="#" title="Přejít na článek" aria-label="Otevřít článek o nové technologii Mobil">
+                    <img src="https://picsum.photos/100/100?random=7" alt="Ilustrační obrázek Mobilu"/>
+                </a>
+                <div class="list-content" role="contentinfo">
+                    <span class="category" role="doc-subtitle" aria-label="Kategorie článku">TECHNOLOGIE</span>
+                    <h3 id="vertical-article-4">
+                        <a href="#" class="article-link" aria-label="Přečíst článek o nové technologii Mobil">
+                            Český titan Spidla.cz uvedl na trh novou technologii zvanou Mobilní Telefon. Oběv století?
+                        </a>
+                    </h3>
+                    <span class="date-author" role="contentinfo" aria-label="Datum a autor">8. 11. 2024 | Timur Sansberryburg</span>
+                </div>
+            </article>
+        </aside>
+    </main>
 
-            <!-- Horizontálně zarovnané články -->
-            <section class="article-list-horizontal">
-                <article class="item">
-                    <a href="clanek.html"><img src="https://picsum.photos/300/200?random=1" alt="Článek 1"></a>
-                    <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-                    <p class="article-description">Lorem ipsum dolor sit amet, conconsectetur adipiscing elit. Fusce in nunc vel felis tempor aliquet.</p>
-                    <span class="date-author">Autor | 3. listopadu 2024</span>
-                </article>
-                <article class="item">
-                    <a href="clanek.html"><img src="https://picsum.photos/300/200?random=2" alt="Článek 2"></a>
-                    <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-                    <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Integer vel elit sit amet risus ullamcorper.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
-                </article>
-                <article class="item">
-                    <a href="clanek.html"><img src="https://picsum.photos/300/200?random=3" alt="Článek 3"></a>
-                    <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-                    <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 4. listopadu 2024</span>
-                </article>
-                <article class="item">
-                    <a href="clanek.html"><img src="https://picsum.photos/300/200?random=4" alt="Článek 4"></a>
-                    <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-                    <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 8. listopadu 2024</span>
-                </article>
-                <article class="item">
-                    <a href="clanek.html"><img src="https://picsum.photos/300/200?random=5" alt="Článek 5"></a>
-                    <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-                    <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 9. listopadu 2024</span>
-                </article>
-                <article class="item">
-                    <a href="clanek.html"><img src="https://picsum.photos/300/200?random=6" alt="Článek 6"></a>
-                    <h2><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-                    <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, lectus eget vehicula suscipit, ligula nunc egestas.</p>
-                    <span class="date-author">Autor | 5. listopadu 2024</span>
-                </article>
-            </section>
+    <!-- Premium popup -->
+    <aside class="subscription-container" role="dialog" aria-labelledby="subscription-title" aria-modal="true">
+        <div class="subscription-header">
+            <h1 id="subscription-title">Získat členství</h1>
+            <a href="javascript:void(0);" class="close-button" role="button" aria-label="Zavřít popup">×</a>
+        </div>
+        
+        <!-- Dropdown menu pro zlepšený vzhled na mobilních zařízení -->
+        <section class="subscription-dropdown" role="region" aria-label="Výběr předplatného">
+            <select aria-label="Vyberte typ předplatného">
+                <option value="monthly">Měsíční předplatné</option>
+                <option value="yearly">Roční předplatné</option>
+                <option value="biennial">Dvouleté předplatné</option>
+            </select>
+        </section>
 
-            <hr class="section-divider">
+        <!-- Tlačítka pro výběr typu předplatného -->
+        <section class="subscription-tabs" role="tablist" aria-label="Možnosti předplatného">
+            <button class="subscription-option active" ole="tab" aria-selected="true">Měsíční předplatné</button>
+            <button class="subscription-option" role="tab" aria-selected="false">Roční předplatné</button>
+            <button class="subscription-option" role="tab" aria-selected="false">Dvouleté předplatné</button>
+        </section>
+        
+        <!-- Informace o ceně a platbě -->
+        <section class="price-display" role="region" aria-label="Informace o ceně">
+            <p class="price-description price-label">První měsíc jen</p>
+            <p class="price-cost" aria-label="Aktuální cena">39 Kč</p>
+            <p class="price-description next-payment">Příští opakovaná platba 01. 01. 2025 za 999,999,999 Kč/měsíc</p>
+        </section>
+        
+        <!-- Možnosti platby -->
+        <section class="payment-options" role="radiogroup" aria-label="Způsob platby">
+            <label class="payment-option" role="radio">
+                <input type="radio" name="payment" aria-label="Platba kartou">
+                <p>Platba kartou</p>
+            </label>
+            <label class="payment-option" role="radio">
+                <input type="radio" name="payment" aria-label="Google Pay">
+                <p>Google Pay</p>
+            </label>
+            <label class="payment-option" role="radio">
+                <input type="radio" name="payment" aria-label="Apple Pay">
+                <p>Apple Pay</p>
+            </label>
+            <label class="payment-option" role="radio">
+                <input type="radio" name="payment" checked aria-label="Krádež">
+                <p>Krádež</p> <!-- Toto je vtip, nezneužívat prosím (fakt ale) -->
+            </label>
+        </section>
+        
+        <!-- Tlačítko pro objednání premium -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1" role="button" aria-label="Objednat premium členství">
+            <button class="submit-button">Objednat Premium</button>
+        </a>
+        
+        <!-- Hodně fér podmínky platby -->
+        <p class="payment-terms" role="note" aria-label="Podmínky platby">Kliknutím na tlačítko souhlasíte s darováním vašeho majetku společnosti iZítra.cz.</p>
+    </aside>
 
-            <h2 class="other-articles">Další Zajímavé Články</h2>
-
-            <!-- Vertikálně zarovnané články -->
-            <aside class="article-list-vertical">
-                <article class="list-item">
-                    <a href="clanek.html"><img src="https://picsum.photos/100/100?random=4" alt="Článek 1"></a>
-                    <div class="list-content">
-                        <span class="category">KULTURA</span>
-                        <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">6. 11. 2024 | Autor</span>
-                    </div>
-                </article>
-                <article class="list-item">
-                    <a href="clanek.html"><img src="https://picsum.photos/100/100?random=5" alt="Článek 2"></a>
-                    <div class="list-content">
-                        <span class="category">ZAHRANIČNÍ</span>
-                        <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">7. 11. 2024 | Autor</span>
-                    </div>
-                </article>
-                <article class="list-item">
-                    <a href="clanek.html"><img src="https://picsum.photos/100/100?random=6" alt="Článek 3"></a>
-                    <div class="list-content">
-                        <span class="category">DOMÁCÍ</span>
-                        <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">9. 11. 2024 | Autor</span>
-                    </div>
-                </article>
-                <article class="list-item">
-                    <a href="clanek.html"><img src="https://picsum.photos/100/100?random=7" alt="Článek 4"></a>
-                    <div class="list-content">
-                        <span class="category">POČASÍ</span>
-                        <h3><a href="clanek.html" class="article-link">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-                        <span class="date-author">8. 11. 2024 | Autor</span>
-                    </div>
-                </article>
-            </aside>
-        </main>
-    </div>
-
-    <hr class="footer-line" />
+    <hr class="footer-line" role="separator" aria-label="Oddělovač sekce"/>
 
     <!-- Footer -->
-    <footer class="footer">
-        <section class="footer-content">
-            <div class="footer-brand">
-                <a href="index.html"><img src="images/logo.png" alt="iZITRA.cz Logo" /></a>
-                <p>Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
+    <footer class="footer" role="contentinfo" aria-label="Patička webu">
+        <section class="footer-content" role="complementary">
+            <div class="footer-brand" role="banner">
+                <a href="index.html" title="Kliknutím přejdete na domovskou stránku" aria-label="Domovská stránka">
+                    <img src="images/logo.png" alt="iZITRA.cz Logo" aria-label="Logo webu"/>
+                </a>
+                <p role="text">Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
             <div class="footer-links">
-                <h4>Navigace</h4>
-                <ul>
-                    <li><a href="domaci.html">Domácí</a></li>
-                    <li><a href="zahranicni.html">Zahraniční</a></li>
-                    <li><a href="sport.html">Sport</a></li>
-                    <li><a href="kultura.html">Kultura</a></li>
-                    <li><a href="pocasi.html">Počasí</a></li>
-                    <li><a href="redakce.html">Redakce</a></li>
+                <h4 id="footer-nav">Navigace</h4>
+                <ul role="navigation" aria-labelledby="footer-nav">
+                    <li><a href="#" aria-label="Sekce domácích zpráv">Domácí</a></li>
+                    <li><a href="#" aria-label="Sekce zahraničních zpráv">Zahraniční</a></li>
+                    <li><a href="#" aria-label="Sportovní sekce">Sport</a></li>
+                    <li><a href="#" aria-label="Kulturní sekce">Kultura</a></li>
+                    <li><a href="#" aria-label="Předpověď počasí">Počasí</a></li>
+                    <li><a href="#" aria-label="O redakci">Redakce</a></li>
                 </ul>
             </div>
-            <a href="premium.html" class="premium-button-footer">
-                <span class="premium-text-icon">★</span>
+            <a href="#" class="premium-button-footer" role="button" aria-label="Získat prémiové členství">
+                <span class="premium-text-icon" aria-hidden="true">★</span>
                 <span class="premium-text-footer">Získejte Premium</span>
-                <span class="premium-text-icon">★</span>
+                <span class="premium-text-icon" aria-hidden="true">★</span>
             </a>
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/"><img src="images/icon-facebook.png" alt="Facebook"></a>
-                    <a href="https://twitter.com/"><img src="images/icon-twitter.png" alt="Twitter"></a>
-                    <a href="https://www.instagram.com/"><img src="images/icon-instagram.png" alt="Instagram"></a>
-                    <a href="https://www.tiktok.com/"><img src="images/icon-tiktok.png" alt="TikTok"></a>
+                <div class="social-icons" role="navigation" aria-labelledby="social-heading">
+                    <a href="https://www.facebook.com/" aria-label="Sledujte nás na Facebooku"><img src="images/icon-facebook.png" alt="Facebook"/></a>
+                    <a href="https://twitter.com/" aria-label="Sledujte nás na Twitteru"><img src="images/icon-twitter.png" alt="Twitter"/></a>
+                    <a href="https://www.instagram.com/" aria-label="Sledujte nás na Instagramu"><img src="images/icon-instagram.png" alt="Instagram"/></a>
+                    <a href="https://www.tiktok.com/" aria-label="Sledujte nás na TikToku"><img src="images/icon-tiktok.png" alt="TikTok"/></a>
                 </div>
             </div>
         </section>
-        <hr class="section-divider"/>
-        <p class="copyright">
+        <hr class="section-divider" role="separator"/>
+        <p class="copyright" role="contentinfo" aria-label="Informace o autorských právech">
             &copy; 2024 iZítra.cz<br>
+            Studentský projekt<br>
             Ritter Radek, Boufala Karim
         </p>
     </footer>

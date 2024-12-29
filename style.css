@@ -114,6 +114,7 @@ body {
 }
 
 .nav-links li a {
+    position: relative;
     padding: 8px 16px;
     color: var(--text-primary);
     font-weight: bold;
@@ -122,9 +123,33 @@ body {
     text-decoration: none;
 }
 
+/* Pseudo-element ::after vytvoří podtržítko pod odkazem pro lepší vizuální oddělení */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Při najetí myší se podtržítko rozšíří na 25% volného místa */
+.nav-links li a:hover::after {
+    width: 25%;
+}
+
 /* Při najetí myší na odkaz se změní barva textu */
 .nav-links li a:hover {
-    color: var(--color-primary);
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Add a white glow effect */
+}
+
+/* Žádné potržení pro premium tlačítko */
+.premium.no-glow:after {
+    content: none;
 }
 
 /* Pro premium se text tlačítka nijak neměni, zůstane černé */
@@ -140,8 +165,10 @@ body {
 }
 
 .nav-links .premium:hover {
-    transition: filter 0.3s ease;
-    filter: brightness(1.2);
+    transition: filter 0.3s ease, outline 0.2s ease;
+    filter: brightness(1.125);
+    outline: 2px solid var(--color-primary); /* Orámování kolem tlačítka pro zlepšení přístupnosti */
+    outline-offset: 1.5px; /* Offset orámování */
 }
 
 /* Vyhledávací pole na desktopu */
@@ -286,25 +313,25 @@ body {
 
 /* To stejné pro burger menu s ještě větším odsazením */
 .lines-header.shifted-menu {
-    margin-top: 450px;
+    margin-top: 442px;
 }
 
 /* Drobečková navigace pro zlepšení orientace na webu */
 .breadcrumb {
     margin: 20px 30px;
     font-size: var(--font-size-xs);
-  }
-  
-  .breadcrumb a {
+}
+
+.breadcrumb a {
     color: var(--text-dim);
     text-decoration: none;
-  }
-  
-  .breadcrumb a:hover {
-    text-decoration: underline;
-  }
+}
 
-  .breadcrumb-separator {
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
     color: var(--text-dim);
     margin: 0 2px 0 4px;
     white-space: nowrap; /* Specifikuje, jak se chová whitespace znak (mezera). Varianta nowrap znemožňuje zalamování textu */
@@ -320,48 +347,9 @@ body {
     margin: 0 auto;
     margin-bottom: 40px; /* Prostor mezi obsahem a footerem */
 }
-
-/* Hlavní nadpis */
-.section-title {
-    position: relative; /* Nutné pro správné zarovnání */
-    font-size: var(--font-size-xxl); /* Velikost textu */
-    font-weight: 800; /* Zvýraznění */
-    margin: 0 0 50px; /* Odsazení od ostatního obsahu */
-    text-transform: uppercase; /* Velká písmena pro formálnější vzhled */
-    letter-spacing: 1px; /* Lehké mezery mezi písmeny */
-    padding: 0 30px 10px; /* Odsazení od okraje elementu */
-}
-
-/* Pseudo-element ::after vytvoří podtržítko pod nadpisem pro lepší vizuální oddělení */
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    width: 80%;
-    height: 2px; /* Šířka čáry */
-    background: linear-gradient(to right, var(--color-primary), transparent); /* Gradient ze žluté na neviditelný odstín */
-}
-
-.section-title.no-after {
-    margin: 0; /* Odstranění odsazení pro elementy s no-after třídou */
-}
-
-.section-title.no-after::after {
-    content: none; /* Odstranění podtržítka pro elementy s no-after třídou */
-}
-
-/* Alternativní nadpis pro odlišení od hlavního nadpisu */
-.alternate-title {
-    padding: 0 30px;
-    font-size: var(--font-size-sm);
-    font-weight: bold;
-    color: var(--text-secondary);
-    /* margin-bottom: 20px; - clashing margins */
-}
-
 /* Hlavní článek s připojeným obrázkem a textem */
 .featured-article {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 20px 15px;
@@ -395,9 +383,11 @@ body {
 .featured-article-description {
     font-size: var(--font-size-md);
     color: var(--text-secondary);
-    margin: 5px 0;
+    line-height: 1.25;
+    margin: 5px 5px 10px 0;
 }
 
+/* Seznam článků */
 .article-description {
     font-size: var(--font-size-sm);
     color: var(--text-secondary);
@@ -418,8 +408,49 @@ body {
     margin-top: 10px;
 }
 
-/* Rozložení hlavního článku na desktopu. Za použití min-width zaručíme se změní layout článku až když je šířka stránky nižší než 900px*/
-@media (min-width: 900px) {
+.read-more {
+    color: var(--color-secondary);
+}
+
+.read-more:hover {
+    transition: filter 0.3s ease, outline 0.2s ease;
+    filter: brightness(1.125);
+}
+
+/* Styl pro statistiky článku */
+.featured-stats {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 12px;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+}
+
+.stat-item svg {
+    width: 16px;
+    height: 16px;
+}
+
+.hot-news-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: var(--font-size-md);
+}
+
+/* Rozložení hlavního článku na desktopu. Za použití min-width zaručíme se změní layout článku až když je šířka stránky nižší než 1000px*/
+@media (min-width: 1000px) {
     .featured-article {
         flex-direction: row; /* Na desktopu bude obrázek a text vedle sebe */
         margin: 30px 20px;
@@ -439,6 +470,17 @@ body {
     }
 }
 
+@media (max-width: 1000px) {
+    .featured-stats {
+        position: static;
+        margin-top: 10px;
+        justify-content: flex-end;
+    }
+    .hot-news-badge {
+        visibility: hidden;
+    }
+}
+
 /* Odkazy v nadpisech článků */
 .article-link {
     color: var(--text-primary);
@@ -447,7 +489,7 @@ body {
 }
 
 .article-link:hover {
-    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 /* Horizontálně zarovnané články */
@@ -470,10 +512,23 @@ body {
     margin-top: 5px;
 }
 
-/* Pro mobilní zařízení se počet horizontálně zarovnaných článků změní na 2 */
+/* Pro tablety se počet horizontálně zarovnaných článků změní na 2 */
 @media (max-width: 900px) {
     .article-list-horizontal {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .article-list-horizontal .item:nth-child(9) {
+        display: none;
+    }
+}
+
+/* Pro mobilní zařízení se počet horizontálně zarovnaných článků změní na 1 */
+@media (max-width: 450px) {
+    .article-list-horizontal {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .article-list-horizontal .item:nth-child(9) {
+        display: block;
     }
 }
 
@@ -563,7 +618,7 @@ body {
 
 .footer-brand p {
     font-size: var(--font-size-sm);
-    color: #cccccc;
+    color: var(--text-primary);
     margin-top: 10px;
 }
 
@@ -591,7 +646,9 @@ body {
 }
 
 .footer-links ul li a:hover {
-    color: #ffcc00;
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+    text-underline-offset: 2px; /* Adjust the underline offset */
 }
 
 /* Tlačítko pro premium obsah ve footeru */
@@ -608,8 +665,10 @@ body {
 }
 
 .premium-button-footer:hover {
-    transition: filter 0.3s ease;
-    filter: brightness(1.2); /* Při najetí myší se barva tlačítka rozjasní */
+    transition: filter 0.3s ease, outline 0.2s ease;
+    filter: brightness(1.125);
+    outline: 1px solid var(--color-primary); /* Orámování kolem tlačítka pro zlepšení přístupnosti */
+    outline-offset: 1.5px; /* Offset orámování */
 }
 
 /* Rozložení ikon sociálních sítí */
@@ -637,615 +696,34 @@ body {
 .copyright {
     font-size: 12px;
     color: #999999;
+    line-height: 1.25;	
 }
 
-/* CLANEK */
-/* Kontejner pro článek */
-.article-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 125px 30px 50px;
-}
-
-/* Úvodní obrázek */
-.article-content img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-    margin-bottom: 20px;
-}
-
-/* Nadpis a informace o článku */
-.article-header {
-    margin-bottom: 20px;
-}
-
-.article-header h1 {
-    font-size: var(--font-size-xxxl);
-    margin-bottom: 10px;
-}
-
-.article-info {
-    display: flex;
-    align-items: center;
-    font-size: var(--font-size-sm);
-    padding-bottom: 24px;
-    color: var(--text-muted);
-}
-
-.article-info .author {
-    font-weight: bold;
-    color: var(--color-secondary);
-}
-
-/* Ikona autora */
-.article-info .icon {
-    border-radius: 50%;
-    max-width: 100%;
-    width: 45px;
-    height: 45px;
-}
-
-.article-info .author-image {
-    display: inline-flex;
-    margin-right: 10px;
-}
-
-.article-info .group {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Hlavní text článku */
-.article-content {
-    font-size: var(--font-size-md);
-    line-height: 1.5; /* Výška řádku pro lepší čitelnost */
-    color: var(--text-secondary);
-}
-
-.article-content h2 {
-    font-size: var(--font-size-xl);
-    margin: 20px 0 10px;
-}
-
-.article-content p {
-    margin-bottom: 15px;
-}
-
-.article-quote blockquote { /* Citace v článku */
-    margin-bottom: 15px;
-}
-
-/* Doporučené články */
-.recommended-articles {
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    padding-top: 20px;
-    border-top: 1px solid #555555;
-}
-
-.recommended-articles h2 {
-    margin: 0 0 5px 10px;
-}
-
-/* Horizontální rozložení doporučených článků */
-.recommended-article-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap; /* Zabrání zalomení položek na další řádek */
-    gap: 20px;
-    padding-top: 10px;
-}
-
-.recommended-article-list .list-item {
-    display: flex;
-    align-items: center;
-    width: 30%; /* Každý článek zabere přibližně třetinu šířky */
-    max-width: 400px;
-}
-
-.recommended-article-list .list-item img {
-    border-radius: 8px;
-    margin-right: 15px;
-}
-
-/* Sekce komentářů */
-.comments-section {
-    padding: 20px 15px;
-    margin: 30px 0;
-    background-color: var(--color-surface);
-    border-radius: 8px;
-}
-
-.comments-section h2 {
-    font-size: var(--font-size-xl);
-    margin-bottom: 20px;
-    color: var(--text-primary);
-}
-
-.comment-form {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: row; /* Směr flex kontejneru na řádky, textové pole a tlačítko na jednom řádku */
-    gap: 10px;
-    align-items: stretch; /* Zarovnání prvků na stejnou výšku */
-}
-
-/* Vstupní pole pro komentář */
-.comment-input {
-    flex: 1;
-    min-height: 50px;
-    padding: 12px;
-    border: 1px solid var(--color-surface-light);
-    border-radius: 8px;
-    background-color: var(--color-surface-bright);
-    color: var(--text-primary);
-    resize: vertical; /* Umožní uživateli změnit velikost vstupního pole (jen vertikálně) */
-}
-
-/* Tlačítko pro odeslání komentáře */
-.comment-submit {
-    align-self: stretch;
-    padding: 0 25px;
-    background-color: var(--color-primary);
-    color: var(--color-background);
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: filter 0.3s ease;
-}
-
-.comment-submit:hover {
-    filter: brightness(1.1);
-}
-
-.comments-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.comment {
-    display: flex;
-    gap: 15px;
-    padding: 15px;
-    background-color: var(--color-surface-light);
-    border-radius: 8px;
-}
-
-.comment-avatar img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.comment-body { 
-    flex: 1; /* Flex se rovná jedničce pro rovnoměrné rozdělení prostoru mezi obrázek a text komentáře */
-}
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.comment-header h3 {
-    font-size: var(--font-size-md);
-    color: var(--text-primary);
-}
-
-.comment-date {
-    font-size: var(--font-size-xs);
-    color: var(--text-muted);
-}
-
-.comment-body p {
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-/* Sdílení článku */
-.social-share {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Zarovnání do prava */
-    gap: 16px;
-    margin-left: auto;
-    padding: 20px 0;
-}
-
-/* Socíální ikony pro sdílení článku */
-.social-share .social-icons {
-    margin: 0;
-    display: flex;
-    gap: 10px;
-}
-
-.social-share .social-icons a img {
-    width: 20px;
-    height: 20px;
-}
-
-.social-share p {
-    font-size: smaller;
-}
-
-/* Úpravy pro optimalizaci webu pro mobilní zařízení (responzivní design pro zobrazení na různých zařízeních) */
-@media screen and (max-width: 800px) {
-    /* Doporučené články se zobrazí pod sebou */
-    .recommended-article-list {
-        flex-direction: column;
-        padding: 0 15px;
-    }
-    
-    .recommended-article-list .list-item {
-        width: 90%;
-    }
-
-    .recommended-articles h2 {
-        margin: 0 0 25px 15px;
-        font-size: var(--font-size-ml);
-    }
-
-    /* Menší odsazení obsahu článku */
-    .article-container {
-        padding: 125px 15px;
-    }
-
-    /* Drobné úpavy sekce komentářů */
-    .comments-section {
-        padding: 15px;
-        margin: 40px 0;
-    }
-
-    .comment-form {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .comment-input {
-        flex: 1;
-        min-width: 100px;
-    }
-
-    .comment-submit {
-        padding: 12px 30px;
-    }
-
-    .comment {
-        padding: 20px;
-    }
-
-    .comment-avatar img {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-/* POCASI */
-/* Tabulka předpovědí počasí */
-.forecast-grid {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); /* Funkce repeat vytvoří tři sloupce s minimální šířkou 125px a automaticky bude vhodně zarovnávat (fr - fraction unit = představuje podíl dostupného prostoru) */
-    gap: 16px;
-    margin: 32px;
-    padding: 0 30px;
-}
-
-/* Jednotlivé buňky tabulky (kartičky) */
-.forecast-card {
-    background-color: var(--color-surface);
-    padding: 24px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.day {
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: var(--text-primary);
-}
-
-.forecast-card:hover {
-    transform: translateY(-3px);; /* Při najetí myší na kartu se zvětší a posune */
-}
-
-.forecast-card:hover .day {
-    color: var(--color-primary); /* U třídy day se ještě změní barva textu */
-    transition: color 0.2s ease;
-}
-
-/* Ikona počasí */
-.weather-icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 8px;
-}
-
-.temp { /* Teplota */
-    font-size: var(--font-size-xl);
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-}
-
-.low-temp {
-    color: var(--text-muted);
-    font-size: var(--font-size-md);
-}
-
-.description {
-    font-size: var(--font-size-md);
-    color: var(--text-secondary);
-    margin-top: 12px;
-}
-
-/* Navigační šipečky pro menší zařízení, které jsou ze začátku neviditelné (na desktopu) */
-.nav-arrow {
-    position: absolute; /* Umožňuje nám volně polohovat element */
-    display: flex; /* Zobrazíme šipečky jako flexbox */
-    background: var(--color-surface);
-    border: none;
-    color: var(--text-primary);
-    font-size: var(--font-size-ml);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease; /* Plynulá změna vlastností */
-}
-
-.nav-arrow.right {
-    display: none; /* Skrytí šipek na desktopu */
-    left: 97.5%; /* Odsazení od pravého okraje */
-    top: 40%; /* Vertikální zarovnání */
-}
-
-.nav-arrow.left {
-    display: none;
-    right: 97.5%;
-    top: 40%;
-}
-
-.nav-arrow:hover {
-    background: var(--color-surface-light);
-    color: var(--color-primary);
-}
-
-/* Nasazení vlastního stylu horizontálního scrollbaru */
-.scroll-container {
-    width: 50%;
-    margin: 0 auto; /* Zarovnání kontejneru na střed */
-}
-
-/* Scrollbaru samotný */
-.scroll-indicator { 
-    position: relative;
-    height: 4px;
-    background-color: var(--color-surface-light);
-    border-radius: 2px;
-    margin-top: 10px;
-}
-
-/* Průběh scrollbaru (to světle šedé) */
-.scroll-thumb {
-    position: absolute;
-    height: 100%;
-    width: 40%;  /* Představuje viditelnou část */
-    background-color: var(--text-primary);
-    border-radius: 2px;
-    left: 0px;  /* Zarovnán na levo scrollbaru */
-    opacity: 0.8;
-}
-
-/* Scrollbar šipky */
-.scroll-arrows {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-    color: var(--text-dim);
-    font-size: var(--font-size-xs);
-}
-
-/* Selektor regionů */
-.region-select {
-    margin: 32px;
-    padding: 16px;
-    width: calc(100% - 64px); /* Výpočet šířky elementu (o něco menší než 100% šířka (menší o okraj kontejneru mapy - padding)) */
-    background-color: var(--color-surface);
-    border: 1px solid #444;
-    border-radius: 8px;
-    color: var(--text-primary);
-    font-size: var(--font-size-md);
-    cursor: pointer;
-}
-
-/* Styl rozevíracího seznamu při otevření */
-.region-select option {
-    padding: 8px;
-    background-color: var(--color-surface);
-}
-
-/* Kontejner mapy */
-.map-container {
-    position: relative;
-    margin: 16px 64px;
-    padding: 32px;
-    background-color: var(--color-surface);
-    border-radius: 8px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-}
-
-/* Grid pro zobrazení mini kartiček počasí */
-.region-weather-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-/* Mini kartička počasí (v HTML jsou upraveny pozice jednotlivých kartiček) */
-.weather-box {
-    position: absolute;
-    background-color: var(--color-surface);
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-align: center;
-    max-width: 80px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease;
-    pointer-events: auto;
-}
-
-.weather-box:hover {
-    transform: scale(1.025); /* Při najetí myší na kartu se zvětší a posune */
-    z-index: 2; /* Zvýšíme z-index, aby byla karta viditelná přes ostatní */
-}
-
-.weather-box-icon {
-    width: clamp(48px, 4vw, 48px); /* Funkce clamp vytvoří hodnotu mezi 48px a 4vw (4% šířky viewportu) */
-    height: auto;
-}
-
-.weather-box .temp {
-    font-size: var(--font-size-ml);
-    font-weight: bold;
-    color: var(--text-primary);
-}
-
-.weather-box .low-temp {
-    font-size: var(--font-size-sm);
-    color: var(--text-muted);
-}
-
-/* Základní nastavení mapy počasí */
-.weather-map {
-    width: 70%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Datum */
-.date-overlay {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: var(--font-size-sm);
-    z-index: 1; /* Zvýšíme z-index, aby byl text viditelný přes mapu */
-}
-
-@media screen and (max-width: 1024px) { /* Pro zařízení s maximální šířkou 1024px */
-    .weather-box, .scroll-arrows {
-        display: none;
-    }
-    .nav-arrow.right, .nav-arrow.left {
-        display: flex; /* Zobrazení šipek pro navigaci */
-    }
-    .weather-map {
-        width: 90%; /* Zmenšení mapy na 90% šířky */
-    }
-    .forecast-card:nth-child(7), .forecast-card:nth-child(6), .forecast-card:nth-child(5) {
-        display: none; /* Skrytí tří nejvzdálenějších kartiček */
-    }
-}
-
-@media screen and (max-width: 640px) { /* Pro zařízení s maximální šířkou 640px */
-    .map-container {
-        padding: 0;
-        height: auto;
-        margin: 8px 24px;
-    }
-
-    .date-overlay {
-        left: 70%; /* Posunutí data doprava (mapa ČR v tomto ohledu není moc optimální) */
-        font-size: clamp(8px, 2vw, 12px); /* Funkce clamp vytvoří hodnotu mezi 8px a 2vw (2% šířky viewportu) */
-    }
-
-    .forecast-card:nth-child(4), .forecast-card:nth-child(3) {
-        display: none; /* Skrytí dalších dvou nejvzdálenějších kartiček */
-    }
-}
-
-/* VYHLEDAVANI */
-/* Kontejner pro vyhledávací prvek */
-.search-bar-container {
-    margin: 24px 30px 40px 30px;
-    max-width: 800px;
-}
-
-/* Stránkování */
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 40px 0;
-}
-
-/* Tlačítko pro přechod na další stránku */
-.pagination button {
-    padding: 8px 16px;
-    background-color: var(--color-surface);
-    border: none;
-    border-radius: 4px;
-    color: var(--text-primary);
-    cursor: pointer;
-    min-width: 40px;
-    font-size: var(--font-size-sm);
-}
-
-/* Při najetí myší na tlačítko se změní barva pozadí a trochu se zvětší (dle osy X) */
-.pagination button:hover {
-    transition: transform 0.1s ease, background-color 0.15s;
-    background-color: var(--color-surface-light);
-    transform: scaleX(1.025);
-}
-
-.pagination p {
-    bottom: 10%;
-    width: 18px;
-    font-size: var(--font-size-ml);
-}
-
-/* PREMIUM */
-
+/* Předplatné */
+/* Základní styl pro předplatné */
 .subscription-container {
-    position: relative;
+    z-index: 1001;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 600px;
-    margin: 90px auto; /* auto = horizontální centrování na střed obrazovky (pravo = levo) */
     background-color: var(--color-surface);
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-    animation: slideIn 0.42s ease-out; /* Inicializace animace slideIn, která vytváří efekt vysunutí stránky zespodu nahoru s postupným zprůhledněním */
+    animation: slideIn 0.69s ease-out; /* Inicializace animace slideIn, která vytváří efekt vysunutí stránky zespodu nahoru s postupným zprůhledněním */
 }
 
 @keyframes slideIn { /* Definice nové CSS animace */
     0% { /* Počáteční stav: stránka je mimo obrazovku a je zcela průhledná */
-        transform: translateY(100%);
+        transform: translate(-50%, 150%);
         opacity: 0;
     }
     100% { /* Koncový stav: stránka se postupně vrátila na svojí původní pozici a je plně viditelná */
-        transform: translateY(0);
+        transform: translate(-50%, -50%);
         opacity: 1;
     }
 }
@@ -1269,6 +747,7 @@ body {
 
 .close-button:hover {
     color: var(--text-primary);
+    text-decoration: underline;
 }
 
 /* Tlačítka s nabídkou délky předplatného */
@@ -1461,229 +940,4 @@ body {
     color: var(--text-dim);
     text-align: center;
     margin-top: 20px;
-}
-
-/* REDAKCE */
-
-.content-section {
-    padding: 0 30px;
-}
-
-.redakce-description {
-    color: var(--text-secondary);
-    font-size: var(--font-size-md);
-    line-height: 1.5; /* Lehké odřádkování odstavce pro dýchatelnost mezi řádky */
-    margin-bottom: 30px;
-}
-
-.contact-block {
-    background-color: var(--color-surface);
-    padding: 30px;
-    border-radius: 8px;
-    display: grid;
-    grid-template-columns: auto 1fr; /* Vytvoří dva stejné sloupce (v tomto případě auto = první sloupec se automaticky změní podle šířky obsahu) */
-    gap: 48px;
-}
-
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-right h3 {
-    font-size: var(--font-size-ml);
-    margin-bottom: 10px;
-}
-
-.contact-right p {
-    color: var(--text-primary);
-    line-height: 1.2; /* Výška řádku pro lepší čitelnost */
-    margin-bottom: 8px;
-}
-
-.contact-right .subsidiary-info {
-    margin-top: 20px;
-    color: var(--text-secondary);
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
-}
-
-/* Týmový rošt */
-.team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Vytvoří dva stejné sloupce (fr - fraction unit = představuje podíl dostupného prostoru) */
-    gap: 32px;
-    margin-top: 30px;
-}
-
-.team-section-title {
-    position: relative;
-    font-size: var(--font-size-xl);
-    letter-spacing: 1px; /* Lehké mezery mezi jednotlivými písmeny */
-    margin-top: 40px;
-    padding-bottom: 10px;
-}
-
-/* Podtržítko pod nadpisem pro lepší vizuální oddělení */
-.team-section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -10px; /* Menší levé odsazení pro esoterický vzhled */
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(to right, #FEE7BC, transparent); /* Gradient ze žluté na neviditelný odstín */
-}
-
-.team-member {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: var(--color-surface);
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.team-member-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.member-info h3 {
-    color: var(--text-primary);
-    margin-bottom: 5px;
-}
-
-.member-info p {
-    color: var(--text-secondary);
-    font-size: var(--font-size-sm);
-}
-
-/* Sociální ikony */
-.social-icons {
-    display: flex;
-    gap: 5px;
-}
-
-.social-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    flex-shrink: 0; /* Zabránění zmenšení ikony při úbytku šířky stránek */
-    align-items: center;
-    justify-content: center;
-    /*background-color: var(--color-background);*/
-    transition: transform 0.2s;
-}
-
-.social-icons a img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s;
-}
-
-.social-icon:hover {
-    transform: scale(1.05); /* Zvětšení ikony při najetí myší - legitimace responzivity */
-}
-
-/* Nastavení ikony email, telefon a LinkedIn */
-.contact-choice {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-choice a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: var(--font-size-sm);
-    font-weight: bold;
-}
-
-.icon-position {
-    position: absolute; /* Připnutí ikon na správná místa */
-    transition: transform 0.2s ease;
-}
-
-.email-icon {
-    top: 12px;
-    right: 50px;
-}
-
-.linkedin-icon {
-    top: 14px;
-    right: 16px;
-}
-
-/* Zábavná animace ikon */
-.email-icon:hover, .linkedin-icon:hover {
-    transform: rotate(10deg);
-}
-
-/* REDAKCE - RESPONZIVITA */
-@media screen and (max-width: 832px) {
-    /* Týmový rošt a blok kontaktů se změní na jednosloupcový layout */
-    .team-grid {
-        grid-template-columns: 1fr; /* Jeden sloupec */
-        gap: 24px;
-    }
-
-    .contact-block {
-        display: flex;
-        gap: 24px;
-        padding: 24px;
-        flex-direction: column;
-    }
-
-    .contact-left {
-        order: 1; /* Uspořádání prvků v bloku kontaktů */
-    }
-
-    .contact-right p {
-        margin-bottom: 16px;
-    }
-
-    /* Drobné úpravy jednotlivých elementů, mění se jejich velikost a pozice pro lepší orientaci a čitelnost na mobilních zařízení */
-    .social-icons {
-        gap: 5px;
-        justify-content: right;
-    }
-    
-    .social-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .social-icon svg {
-        width: 20px;
-        height: 20px;
-        transform: translate(28%, 28%); /* Kvůli měnící se velikosti ikony se musí znovu vypočítat zarovnaní na střed */
-    }
-
-    .content-section {
-        padding: 0 20px;
-    }
-
-    .team-member {
-        padding: 16px;
-    }
-    
-    .team-member-img {
-        width: 72px;
-        height: 72px;
-        margin-right: 16px;
-    }
-
-    .section-title  {
-        margin: 0 0 25px;
-    }
-
-    /* Na stránkách se přestane zobrazovat popis článku. Pro ušetření kódu jsem to přidal jsem, aby se nemuselo inicializovat další @media pravidlo */
-    .list-content p { 
-        display: none;
-    }
 }
