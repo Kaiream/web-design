@@ -38,8 +38,8 @@
     --color-surface-hc: #111111;
     --text-primary-hc: #ffffff;
     --text-secondary-hc: #ff00ff;
-    --text-muted: #eeeeee;
-    --text-dim: #cccccc;
+    --text-muted-hc: #eeeeee;
+    --text-dim-hc: #cccccc;
 }
 
 /* Základní styl pro celou stránku */
