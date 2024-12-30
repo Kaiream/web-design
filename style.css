@@ -30,6 +30,16 @@
     --font-size-xl: 24px;
     --font-size-xxl: 28px;
     --font-size-xxxl: 32px;
+
+    /* Barvy pro režim vysokého kontrastu */
+    --color-primary-hc: #ffff00; 
+    --color-secondary-hc: #00ffff;
+    --color-background-hc: #000000;
+    --color-surface-hc: #111111;
+    --text-primary-hc: #ffffff;
+    --text-secondary-hc: #ff00ff;
+    --text-muted: #eeeeee;
+    --text-dim: #cccccc;
 }
 
 /* Základní styl pro celou stránku */
@@ -37,6 +47,18 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--color-background);
     color: var(--text-primary);
+}
+
+/* Změna barev celých stránek v režimu vysokého kontrastu */
+body.high-contrast {
+    --color-primary: var(--color-primary-hc);
+    --color-secondary: var(--color-secondary-hc);
+    --color-background: var(--color-background-hc);
+    --color-surface: var(--color-surface-hc);
+    --text-primary: var(--text-primary-hc);
+    --text-secondary: var(--text-secondary-hc);
+    --text-muted: var(--text-muted-hc);
+    --text-dim: var(--text-dim-hc);
 }
 
 /* HEADER */
@@ -249,6 +271,38 @@ body {
     transform: translateY(2px); /* Menší zarovnání ikony*/
 }
 
+/* Tlačítko pro změnu režimu vysokého kontrastu */
+.contrast-toggle {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contrast-toggle:hover {
+    transform: scale(1.1);
+}
+
+.contrast-toggle svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+body.high-contrast .toggle-icon {
+    transform: scaleX(-1);
+}
+
 /* Změna stylu za pomocí Media query pro zařízení s maximální šířkou 1300px */
 @media screen and (max-width: 1300px) {
     .search-toggle, .search-mobile.active {
@@ -292,6 +346,22 @@ body {
         display: block;
         padding: 12px 16px;
     }
+
+    .contrast-toggle {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 11px;
+        z-index: 1000;
+    }
+
+    .contrast-toggle:hover {
+        transform: none;
+    }
+
+    .contrast-toggle.active {
+        display: block;
+    }
 }
 
 /* Horizontální čára oddělující header od zbytku obsahu */
@@ -314,29 +384,6 @@ body {
 /* To stejné pro burger menu s ještě větším odsazením */
 .lines-header.shifted-menu {
     margin-top: 442px;
-}
-
-/* Drobečková navigace pro zlepšení orientace na webu */
-.breadcrumb {
-    margin: 20px 30px;
-    font-size: var(--font-size-xs);
-}
-
-.breadcrumb a {
-    color: var(--text-dim);
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.breadcrumb-separator {
-    color: var(--text-dim);
-    margin: 0 2px 0 4px;
-    white-space: nowrap; /* Specifikuje, jak se chová whitespace znak (mezera). Varianta nowrap znemožňuje zalamování textu */
-    display: inline-block; /* Aby správně fungovala funkce transform, musíme zarovnat element do bloku */
-    transform: scaleY(1.5); /* Zvětšení separátoru o 50% */
 }
 
 /* Kontejner hlavního obsahu */
@@ -424,7 +471,7 @@ body {
     right: 10px;
     display: flex;
     gap: 12px;
-    padding: 6px 10px;
+    padding: 6px 10px 0 10px;
     border-radius: 4px;
 }
 
@@ -441,11 +488,12 @@ body {
     height: 16px;
 }
 
+/* Značka pro nejžhavější článek */
 .hot-news-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    bottom: 15px;
     padding: 4px 8px;
+    margin-left: 7.5px;
     font-size: var(--font-size-md);
 }
 
@@ -468,16 +516,10 @@ body {
     .featured-article h1 {
         font-size: var(--font-size-xxl);
     }
-}
 
-@media (max-width: 1000px) {
-    .featured-stats {
-        position: static;
-        margin-top: 10px;
-        justify-content: flex-end;
-    }
     .hot-news-badge {
-        visibility: hidden;
+        top: 10px;
+        right: 10px;
     }
 }
 
@@ -513,17 +555,22 @@ body {
 }
 
 /* Pro tablety se počet horizontálně zarovnaných článků změní na 2 */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .article-list-horizontal {
         grid-template-columns: repeat(2, 1fr);
     }
     .article-list-horizontal .item:nth-child(9) {
         display: none;
     }
+    .featured-stats {
+        position: static;
+        margin-top: 10px;
+        justify-content: flex-end;
+    }
 }
 
 /* Pro mobilní zařízení se počet horizontálně zarovnaných článků změní na 1 */
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .article-list-horizontal {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -780,25 +827,6 @@ body {
     border-color: var(--color-primary);
 }
 
-/* Změna stylu pro zařízení s maximální šířkou 675px, zmizí jednotlivá tlačítka a zobrazí se dropdown menu, postupné zmenšení textu */
-@media screen and (max-width: 675px) { 
-    .subscription-tabs {
-        display: none;
-    }
-
-    .subscription-dropdown {
-        display: block;
-    }
-
-    .subscription-header h1 {
-        font-size: clamp(24px, 6vw, 32px); 
-    }
-
-    .payment-option span {
-        font-size: clamp(12px, 2.75vw, 14px);
-    }
-}
-
 .subscription-option {
     flex: 1; /* Rozdělení tlačítek na stejně velké části */
     padding: 12px;
@@ -892,6 +920,7 @@ body {
     100% { transform: translate(-50%, -50%) scale(1); } /* Konec animace: ikona se postupně (za 0.2 sekund) zvětšuje, dokud nedosáhne maxima (10px x 10px) a poté je plně viditelná */
 }
 
+/* Styl pro tlačítko objednání předplatného */
 .submit-button {
     width: 100%;
     padding: 15px;
@@ -940,4 +969,38 @@ body {
     color: var(--text-dim);
     text-align: center;
     margin-top: 20px;
+}
+
+/* Změna stylu pro zařízení s maximální šířkou 675px, zmizí jednotlivá tlačítka a zobrazí se dropdown menu, postupné zmenšení textu a mezer mezi elementy */
+@media screen and (max-width: 675px) { 
+    .subscription-tabs {
+        display: none;
+    }
+
+    .subscription-dropdown {
+        display: block;
+    }
+
+    .subscription-header h1 {
+        font-size: clamp(24px, 6vw, 32px); 
+    }
+
+    .payment-option span {
+        font-size: clamp(12px, 2.75vw, 14px);
+    }
+
+    .payment-options {
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .submit-button {
+        margin-top: 15px;
+    }
+
+    .subscription-container{
+        padding: 20px;
+        max-height: 670px;
+        top: 51%;
+    }
 }

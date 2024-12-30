@@ -64,6 +64,15 @@
 
     <hr class="lines-header" role="separator" aria-label="Oddělovač sekce"></hr>
 
+    <!-- Tlačítko pro změnu vzhledu stránky na režim vysokého kontrastu -->
+    <button class="contrast-toggle" title="Vysoký kontrast" aria-label="Přepnout do režimu vysokého kontrastu">
+        <!-- SVG ikona tlačítka -->
+        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/>
+        </svg>
+    </button>
+
     <!-- Hlavní obsah stránky -->
     <main class="main-content" role="main">
 
@@ -146,19 +155,24 @@
         <section class="article-list-horizontal" role="region" aria-label="Seznam horizontálních článků">
             <!-- Článek 1 -->
             <article class="item" role="article" aria-labelledby="article-1-title">
+                <!-- Obrázek článku-->
                 <a href="#" title="Přejít na článek" aria-label="Otevřít článek o dopravním značení">
+                    <!-- Využití lorem picsum pro náhodnou generaci obrázků -->
                     <img src="https://picsum.photos/300/200?random=1" alt="Ilustrační obrázek dopravního značení"/>
                 </a>
+                <!-- Nadpis článku -->
                 <h2 id="article-1-title">
                     <a href="#" class="article-link" aria-label="Přečíst článek o dopravním značení">
                         Nový systém dopravního značení v Praze a Pardubicích
                     </a>
                 </h2>
+                <!-- Popisek ke článku -->
                 <p class="article-description" role="text">
                     Nové značení má za cíl zlepšit plynulost dopravy a zvýšit bezpečnost na silnicích.
                     Tato bakalářská práce se mimo jiné zabývá...
                     <a href="#" class="read-more" aria-label="Přečíst celý článek">Číst dále</a>
                 </p>
+                <!-- Autor a datum článku -->
                 <span class="date-author" role="contentinfo" aria-label="Informace o autorovi a datum zveřejnění">
                     George Gruee | 3. listopadu 2024
                 </span>
@@ -326,6 +340,7 @@
         <!-- Vertikálně zarovnané články -->
         <aside class="article-list-vertical" role="complementary" aria-label="Seznam souvisejících článků">
             <!-- Vertikální článek 1 -->
+            <!-- Podobně upravené jako články nahoře, akorát bez popisku -->
             <article class="list-item" role="article" aria-labelledby="vertical-article-1">
                 <a href="#" title="Přejít na článek" aria-label="Otevřít článek o prezidentu Pavlovi">
                     <img src="https://picsum.photos/100/100?random=4" alt="Ilustrační obrázek prezidenta Pavla"/>
@@ -389,14 +404,15 @@
         </aside>
     </main>
 
-    <!-- Premium popup -->
+    <!-- Členství -->
+    <!-- Abychom upoutali pozornost uživatele, dialog se sám otevře zhruba v 80% stránky (manuálně ho můžeme otevřít za pomocí premium tlačítek v headru a footeru), defaultně je skrytý -->
     <aside class="subscription-container" role="dialog" aria-labelledby="subscription-title" aria-modal="true">
         <div class="subscription-header">
             <h1 id="subscription-title">Získat členství</h1>
             <a href="javascript:void(0);" class="close-button" role="button" aria-label="Zavřít popup">×</a>
         </div>
         
-        <!-- Dropdown menu pro zlepšený vzhled na mobilních zařízení -->
+        <!-- Dropdown menu pro zlepšený vzhled na mobilních zařízení (místo jednotlivých tlačítek) -->
         <section class="subscription-dropdown" role="region" aria-label="Výběr předplatného">
             <select aria-label="Vyberte typ předplatného">
                 <option value="monthly">Měsíční předplatné</option>
@@ -453,12 +469,14 @@
     <!-- Footer -->
     <footer class="footer" role="contentinfo" aria-label="Patička webu">
         <section class="footer-content" role="complementary">
+            <!-- Logo a popisek k němu-->
             <div class="footer-brand" role="banner">
                 <a href="index.html" title="Kliknutím přejdete na domovskou stránku" aria-label="Domovská stránka">
                     <img src="images/logo.png" alt="iZITRA.cz Logo" aria-label="Logo webu"/>
                 </a>
                 <p role="text">Nejnovější zprávy ze světa a domova. Buďte v obraze s aktuálními událostmi.</p>
             </div>
+            <!-- Navigace ve footeru-->
             <div class="footer-links">
                 <h4 id="footer-nav">Navigace</h4>
                 <ul role="navigation" aria-labelledby="footer-nav">
@@ -475,6 +493,7 @@
                 <span class="premium-text-footer">Získejte Premium</span>
                 <span class="premium-text-icon" aria-hidden="true">★</span>
             </a>
+            <!-- Sociální sítě -->
             <div class="footer-social">
                 <h4>Sledujte nás</h4>
                 <div class="social-icons" role="navigation" aria-labelledby="social-heading">
@@ -486,12 +505,14 @@
             </div>
         </section>
         <hr class="section-divider" role="separator"/>
+        <!-- Autorská práva a info o tom, že se jedná o studenský projekt -->
         <p class="copyright" role="contentinfo" aria-label="Informace o autorských právech">
             &copy; 2024 iZítra.cz<br>
             Studentský projekt<br>
             Ritter Radek, Boufala Karim
         </p>
     </footer>
+    <!-- Link na externí soubor obsahující logiku stránky -->
     <script src="main.js"></script>
 </body>
 </html>
